@@ -1,0 +1,47 @@
+
+<app-navbar></app-navbar>
+
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Health Check-Up Appointment Form</h1>
+    <div class="card">
+        <div class="card-body">
+            <form [formGroup]="appointmentForm" (ngSubmit)="onSubmit()">
+                <div class="mb-3">
+                    <label for="fullName" class="form-label">Full Name</label>
+                    <input type="text" formControlName="name" class="form-control" id="fullName" placeholder="Enter your full name">
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email Address</label>
+                    <input type="email" formControlName="email" class="form-control" id="email" placeholder="Enter your email">
+                </div>
+                <div class="mb-3">
+                    <label for="phone" class="form-label">Phone Number</label>
+                    <input type="tel" formControlName="phone" class="form-control" id="phone" placeholder="Enter your phone number">
+                </div>
+                <div class="mb-3">
+                    <label for="date" class="form-label">Appointment Date</label>
+                    <input type="date" formControlName="date" class="form-control" id="date">
+                </div>
+                <div class="mb-3">
+                    <label for="department" class="form-label">Department</label>
+                    <select formControlName="department" class="form-select" id="department">
+                        <option value="">Select Department</option>
+                        <option value="general">General Medicine</option>
+                        <option value="cardiology">Cardiology</option>
+                        <option value="dermatology">Dermatology</option>
+                        <option value="orthopedics">Orthopedics</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Additional Notes</label>
+                    <textarea formControlName="message" class="form-control" id="message" rows="3" placeholder="Enter any additional details..."></textarea>
+                </div>
+                <button type="submit" class="btn  w-100 text1" style="background-color: rgb(242, 110, 38); color: white;">Book Appointment</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<br>
+
+<app-footer></app-footer>

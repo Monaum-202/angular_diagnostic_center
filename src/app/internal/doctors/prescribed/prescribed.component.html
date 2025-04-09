@@ -1,0 +1,56 @@
+<br>
+<table class="table table-striped table-bordered align-middle">
+  <thead class="table-dark text-center">
+    <tr>
+      <th style="width: 6%;">ID</th>
+      <th style="width: 15%;">Name</th>
+      <th style="width: 15%;">Phone</th>
+      <th style="width: 6%;">Age</th>
+      <th style="width: 6%;">Sex</th>
+      <th style="width: 25%;">Advice</th>
+      <th style="width: 15%;">Follow-up Date</th>
+      <th style="width: 12%;" class="text-center">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let patient of patientList">
+      <td class="text-center">{{ patient.id }}</td>
+      <td>{{ patient.name }}</td>
+      <td>{{ patient.phone }}</td>
+      <td class="text-center">{{ patient.age }}</td>
+      <td class="text-center">{{ patient.sex }}</td>
+      <td>{{ patient.advice }}</td>
+      <td class="text-center">{{ patient.followup }}</td>
+      <td class="text-center">
+        <a [href]="'http://localhost:9090/prescription/download?format=' + format + '&id=' + patient.id" target="_blank" aria-label="Download Prescription">
+          <button class="btn btn-dark btn-sm">Prescription</button>
+        </a>
+      </td>
+    </tr>
+
+    <!-- No data message -->
+    <tr *ngIf="patientList.length === 0">
+      <td colspan="8" class="text-center text-muted">No patients found.</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Pagination Section -->
+<div *ngIf="totalPages > 1" class="d-flex justify-content-center mt-3 gap-2 flex-wrap">
+  <button class="btn btn-outline-secondary btn-sm" [disabled]="currentPage === 0" (click)="changePage(currentPage - 1)">
+    Prev
+  </button>
+
+  <button
+    *ngFor="let page of [].constructor(totalPages); let i = index"
+    class="btn btn-sm"
+    [ngClass]="{ 'btn-primary': currentPage === i, 'btn-outline-secondary': currentPage !== i }"
+    (click)="changePage(i)"
+  >
+    {{ i + 1 }}
+  </button>
+
+  <button class="btn btn-outline-secondary btn-sm" [disabled]="currentPage === totalPages - 1" (click)="changePage(currentPage + 1)">
+    Next
+  </button>
+</div>

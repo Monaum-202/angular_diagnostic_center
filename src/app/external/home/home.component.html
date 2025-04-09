@@ -1,0 +1,700 @@
+<div class="fixed-bottom ms-auto " style="width: 400px; background: none;" >
+    <a routerLink="../hcc">
+        <button type="button" class="btn btn-success px-5 py-2 m-2" >Book Health Check-up</button>
+    </a>
+    <a routerLink="../cac">
+        <button type="button" class="btn m-2 px-5 py-2" style="background-color: rgb(242, 110, 38); color: white;" >Book Appointment</button>
+    </a>
+</div>
+<app-navbar></app-navbar>
+
+
+
+
+
+
+
+
+
+
+<div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+    <!-- Indicators/dots -->
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+    </div>
+
+    <!-- The slideshow/carousel -->
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="assets/second.jpg" alt="Los Angeles" class="d-block" style="width:100%">
+            <div class="carousel-caption">
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="assets/third.jpg" alt="Chicago" class="d-block" style="width:100%">
+            <!-- <div class="carousel-caption">
+          <h3>Chicago</h3>
+          <p>Thank you, Chicago!</p>
+        </div>  -->
+        </div>
+        <div class="carousel-item">
+            <img src="assets/first_page.jpg" alt="New York" class="d-block" style="width:100%">
+            <!-- <div class="carousel-caption">
+          <h3>New York</h3>
+          <p>We love the Big Apple!</p>
+        </div>   -->
+        </div>
+    </div>
+
+    <br>
+    <!-- Left and right controls/icons -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+    </button>
+</div>
+
+<div style="background-color: rgba(242, 109, 38, 0.151);" class="p-5">
+    <div class="container d-flex justify-content-between" >
+        <div class="card_M"><a routerLink="../cac" style="text-decoration:none;">
+            <img src="assets/book_appint.svg" alt="Book Appointment">
+            <p>Book Appointment</p></a>
+        </div>
+        <div class="card_M" ><a routerLink="../hcc" style="text-decoration:none;">
+            <img src="assets/Book_Health.svg" alt="Book Health Check-Up">
+            <p >Book Health Check-Up</p></a>
+        </div>
+        <div class="card_M"><a routerLink="../Online_Doctors" style="text-decoration:none;">
+            <img src="assets/Consult_Online.svg" alt="Consult Online">
+            <p>Consult Online</p></a>
+        </div>
+        <div class="card_M ">
+            <img src="assets/Buy_Medicine.svg" alt="Buy Medicine">
+            <p>Buy Medicine</p>
+        </div>
+        <div class="card_M ">
+            <img src="assets/Find_Hospital.svg" alt="Buy Medicine">
+            <p>Find Hospital</p>
+        </div>
+        <div class="card_M ">
+            <img src="assets/finddoctor.svg" alt="View Health Record">
+            <p>View Health Record</p>
+        </div>
+    </div>
+</div>
+
+    <div>
+        <!-- Nav pills -->
+        <ul class="nav nav-pills justify-content-center" style="background-color: rgb(242, 110, 38);" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active text1" data-bs-toggle="pill" href="#home"
+                    style="border: 0cap ; background-color: rgb(242, 110, 38); color: white;">Specialties</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text1" data-bs-toggle="pill" href="#menu2"
+                    style="border: 0cap ; background-color: rgb(242, 110, 38); color: white;">Products</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text1" data-bs-toggle="pill" href="#menu1"
+                    style="border: 0cap ; background-color: rgb(242, 110, 38); color: white;">ProHealth</a>
+            </li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content" >
+
+            <div id="home" class="container tab-pane active" style="text-align: center; "><br>
+                <h1>Explore our Centres of Clinical Excellence</h1>
+                <br>
+                <p style="font-size: larger;">Green Life Hospital has dedicated Centres of Excellence for several key
+                    specialties and super specialties. They are unique and state of the art facilities <br>spread across
+                    several of the Apollo hospital locations and each Centre of Excellence stands out as a citadel of
+                    world class clinical outcomes.
+                    <br>
+                    <br>
+                    Learn about the world class health care we provide
+                </p>
+                <br>
+                <div class="row">
+                    <div class="col-md-6"><img class="border border-success" src="assets/larg.jpg" alt="" style="border-radius: 20px;" width="100%" 
+                            height="620px">
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md-2 card_M1 ">
+                                <a a routerLink="../Online_Doctors" style="text-decoration:none;" class="pg_widget" id="COE_Cardiology">
+                                    <img src="assets/cardiology_icon.svg" alt="icon">
+                                    <p>Cardiology</p>
+                                </a>
+                            </div>
+
+                            <div class="col-md-2 card_M1 ">
+                                <a href="doctors2.html" class="pg_widget" id="COE_Neurology">
+                                    <img src="assets/neurology.svg" alt="icon">
+                                    <p>Neurology</p>
+                                </a>
+                            </div>
+
+                            <div class="col-md-2 card_M1 ">
+                                <a href="#" class="pg_widget" id="COE_Gastroenterology">
+                                    <img src="assets/gastroenterology.svg" alt="icon">
+                                    <p>Gastroenterology</p>
+                                </a>
+                            </div>
+                            <div class="col-md-2 card_M1 ">
+                                <a href="#" class="pg_widget" id="COE_Orthopaedic">
+                                    <img src="assets/orthopaedic.svg" alt="icon">
+                                    <p>Orthopaedic</p>
+                                </a>
+                            </div>
+
+                            <div class="col-md-2 card_M1 ">
+                                <a href="#" class="pg_widget" id="COE_Oncology">
+                                    <img src="assets/oncology_icon.svg" alt="icon">
+                                    <p>Oncology</p>
+                                </a>
+                            </div>
+
+                            <div class="col-md-2 card_M1 ">
+                                <a href="#" class="pg_widget" id="COE_Gynecology">
+                                    <img src="assets/gynecology.svg" alt="icon">
+                                    <p>Gynecology</p>
+                                </a>
+                            </div>
+
+                            <div class="col-md-2 card_M1 ">
+                                <a href="#" class="pg_widget" id="COE_Dermatology">
+                                    <img src="assets/dermatology.svg" alt="icon">
+                                    <p>Dermatology</p>
+                                </a>
+                            </div>
+
+                            <div class="col-md-2 card_M1 ">
+                                <a href="#" class="pg_widget" id="COE_Ophthalmology">
+                                    <img src="assets/ophthalmology.svg" alt="icon">
+                                    <p>Ophthalmology</p>
+                                </a>
+                            </div>
+
+                            <div class="col-md-2 card_M1 ">
+                                <a href="#" class="pg_widget" id="COE_Pediatrics">
+                                    <img src="assets/paediatricurology.svg" alt="icon">
+                                    <p>Pediatrics</p>
+                                </a>
+                            </div>
+
+                            <div class="col-md-2 card_M1 ">
+                                <a href="#" class="pg_widget" id="COE_Endocrinology">
+                                    <img src="assets/endocrinology.svg" alt="icon">
+                                    <p>Endocrinology</p>
+                                </a>
+                            </div>
+
+
+                            <div class="col-md-2 card_M1 ">
+                                <a href="#" class="pg_widget" id="COE_Urology">
+                                    <img src="assets/urology.svg" alt="icon">
+                                    <p>Urology</p>
+                                </a>
+                            </div>
+
+                            <div class="col-md-2 card_M1 ">
+                                <a href="#" class="pg_widget" id="COE_Nephrology">
+                                    <img src="assets/nephrology.svg" alt="icon">
+                                    <p>Nephrology</p>
+                                </a>
+                            </div>
+
+                            <div class="col-md-2 card_M1 ">
+                                <a href="#" class="pg_widget" id="COE_Pulmonology">
+                                    <img src="assets/pulmonology.svg" alt="icon">
+                                    <p>Pulmonology</p>
+                                </a>
+                            </div>
+
+                            <div class="col-md-2 card_M1 ">
+                                <a href="#" class="pg_widget" id="COE_Rheumatology">
+                                    <img src="assets/rheumatology.svg" alt="icon">
+                                    <p>Rheumatology</p>
+                                </a>
+                            </div>
+
+                            <div class="col-md-2 card_M1 ">
+                                <a href="#" class="pg_widget" id="COE_Neurosurgery">
+                                    <img src="assets/neurology.svg" alt="icon">
+                                    <p>Neurosurgery</p>
+                                </a>
+                            </div>
+
+                            <div class="col-md-2 card_M1 ">
+                                <a href="#" class="pg_widget" id="COE_Radiology">
+                                    <img src="assets/radiology.svg" alt="icon">
+                                    <p>Radiology</p>
+                                </a>
+                            </div>
+
+
+                            <div class="col-md-2 card_M1 ">
+                                <a href="#" class="pg_widget" id="COE_Plasticsurgery">
+                                    <img src="assets/plasticsurgery.svg" alt="icon">
+                                    <p>Plastic surgery</p>
+                                </a>
+                            </div>
+
+                            <div class="col-md-2 card_M1 ">
+                                <a href="#" class="pg_widget" id="COE_Neonatology">
+                                    <img src="assets/neonatology.svg" alt="icon">
+                                    <p>Neonatology</p>
+                                </a>
+                            </div>
+
+                            <div class="col-md-2 card_M1 ">
+                                <a href="#" class="pg_widget" id="COE_VascularSurgery">
+                                    <img src="assets/vascularsurgery.svg" alt="icon">
+                                    <p>Vascular Surgery</p>
+                                </a>
+                            </div>
+
+                            <div class="col-md-2 card_M1 ">
+                                <a href="#" class="pg_widget" id="COE_Psychiatry">
+                                    <img src="assets/psychiatry.svg" alt="icon">
+                                    <p>Psychiatry</p>
+                                </a>
+                            </div>
+
+                            <div class="col-md-2 card_M1 ">
+                                <a href="#" class="pg_widget" id="COE_Dentistry">
+                                    <img src="assets/dentistry.svg" alt="icon">
+                                    <p>Dentistry</p>
+                                </a>
+                            </div>
+
+                            <div class="col-md-2 card_M1 ">
+                                <a href="#" class="pg_widget" id="COE_ENT">
+                                    <img src="assets/ent.svg" alt="icon">
+                                    <p>ENT</p>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div id="menu1" class="container tab-pane fade" style="text-align: center;"><br>
+                <h1>Best Doctors in Bangladesh</h1>
+                <br>
+                <p style="font-size: larger;">Learn about the world class health care we provide</p>
+                <br>
+                <div class="row">
+                    <div class="col-md-6"><img class="border " src="assets/woman-doctor.jpg" alt="" width="100%"
+                            height="650px">
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md-2 card_M1 ">
+                                <a href="#" class="pg_widget" id="COE_Cardiology">
+                                    <img src="assets/cardiology_icon.svg" alt="icon">
+                                    <p>Cardiology</p>
+                                </a>
+                            </div>
+
+                            <div class="col-md-2 card_M1 ">
+                                <a href="#" class="pg_widget" id="COE_Neurology">
+                                    <img src="assets/neurology.svg" alt="icon">
+                                    <p>Neurology</p>
+                                </a>
+                            </div>
+
+                            <div class="col-md-2 card_M1 ">
+                                <a href="#" class="pg_widget" id="COE_Gastroenterology">
+                                    <img src="assets/gastroenterology.svg" alt="icon">
+                                    <p>Gastroenterology</p>
+                                </a>
+                            </div>
+                            <div class="col-md-2 card_M1 ">
+                                <a href="#" class="pg_widget" id="COE_Orthopaedic">
+                                    <img src="assets/orthopaedic.svg" alt="icon">
+                                    <p>Orthopaedic</p>
+                                </a>
+                            </div>
+
+                            <div class="col-md-2 card_M1 ">
+                                <a href="#" class="pg_widget" id="COE_Oncology">
+                                    <img src="assets/oncology_icon.svg" alt="icon">
+                                    <p>Oncology</p>
+                                </a>
+                            </div>
+
+                            <div class="col-md-2 card_M1 ">
+                                <a href="#" class="pg_widget" id="COE_Gynecology">
+                                    <img src="assets/gynecology.svg" alt="icon">
+                                    <p>Gynecology</p>
+                                </a>
+                            </div>
+
+                            <div class="col-md-2 card_M1 ">
+                                <a href="#" class="pg_widget" id="COE_Dermatology">
+                                    <img src="assets/dermatology.svg" alt="icon">
+                                    <p>Dermatology</p>
+                                </a>
+                            </div>
+
+                            <div class="col-md-2 card_M1 ">
+                                <a href="#" class="pg_widget" id="COE_Ophthalmology">
+                                    <img src="assets/ophthalmology.svg" alt="icon">
+                                    <p>Ophthalmology</p>
+                                </a>
+                            </div>
+
+                            <div class="col-md-2 card_M1 ">
+                                <a href="#" class="pg_widget" id="COE_Pediatrics">
+                                    <img src="assets/paediatricurology.svg" alt="icon">
+                                    <p>Pediatrics</p>
+                                </a>
+                            </div>
+
+                            <div class="col-md-2 card_M1 ">
+                                <a href="#" class="pg_widget" id="COE_Endocrinology">
+                                    <img src="assets/endocrinology.svg" alt="icon">
+                                    <p>Endocrinology</p>
+                                </a>
+                            </div>
+
+
+                            <div class="col-md-2 card_M1 ">
+                                <a href="#" class="pg_widget" id="COE_Urology">
+                                    <img src="assets/urology.svg" alt="icon">
+                                    <p>Urology</p>
+                                </a>
+                            </div>
+
+                            <div class="col-md-2 card_M1 ">
+                                <a href="#" class="pg_widget" id="COE_Nephrology">
+                                    <img src="assets/nephrology.svg" alt="icon">
+                                    <p>Nephrology</p>
+                                </a>
+                            </div>
+
+                            <div class="col-md-2 card_M1 ">
+                                <a href="#" class="pg_widget" id="COE_Pulmonology">
+                                    <img src="assets/pulmonology.svg" alt="icon">
+                                    <p>Pulmonology</p>
+                                </a>
+                            </div>
+
+                            <div class="col-md-2 card_M1 ">
+                                <a href="#" class="pg_widget" id="COE_Rheumatology">
+                                    <img src="assets/rheumatology.svg" alt="icon">
+                                    <p>Rheumatology</p>
+                                </a>
+                            </div>
+
+                            <div class="col-md-2 card_M1 ">
+                                <a href="#" class="pg_widget" id="COE_Neurosurgery">
+                                    <img src="assets/neurology.svg" alt="icon">
+                                    <p>Neurosurgery</p>
+                                </a>
+                            </div>
+
+                            <div class="col-md-2 card_M1 ">
+                                <a href="#" class="pg_widget" id="COE_Radiology">
+                                    <img src="assets/radiology.svg" alt="icon">
+                                    <p>Radiology</p>
+                                </a>
+                            </div>
+
+
+                            <div class="col-md-2 card_M1 ">
+                                <a href="#" class="pg_widget" id="COE_Plasticsurgery">
+                                    <img src="assets/plasticsurgery.svg" alt="icon">
+                                    <p>Plastic surgery</p>
+                                </a>
+                            </div>
+
+                            <div class="col-md-2 card_M1 ">
+                                <a href="#" class="pg_widget" id="COE_Neonatology">
+                                    <img src="assets/neonatology.svg" alt="icon">
+                                    <p>Neonatology</p>
+                                </a>
+                            </div>
+
+                            <div class="col-md-2 card_M1 ">
+                                <a href="#" class="pg_widget" id="COE_VascularSurgery">
+                                    <img src="assets/vascularsurgery.svg" alt="icon">
+                                    <p>Vascular Surgery</p>
+                                </a>
+                            </div>
+
+                            <div class="col-md-2 card_M1 ">
+                                <a href="#" class="pg_widget" id="COE_Psychiatry">
+                                    <img src="assets/psychiatry.svg" alt="icon">
+                                    <p>Psychiatry</p>
+                                </a>
+                            </div>
+
+                            <div class="col-md-2 card_M1 ">
+                                <a href="#" class="pg_widget" id="COE_Dentistry">
+                                    <img src="assets/dentistry.svg" alt="icon">
+                                    <p>Dentistry</p>
+                                </a>
+                            </div>
+
+                            <div class="col-md-2 card_M1 ">
+                                <a href="#" class="pg_widget" id="COE_ENT">
+                                    <img src="assets/ent.svg" alt="icon">
+                                    <p>ENT</p>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div id="menu2" class="container tab-pane fade"><br>
+                <div class="row">
+                    <div class="col-md-4">
+                        <img src="assets/larg.png" alt="" width="100%">
+                    </div>
+                    <div class="col-md-8">
+                        <h1>Get proactive - Be ProHealth !</h1>
+                        <h5>Build your ProHealth plan now</h5>
+                        <p>ProHealth Program is a unique end-to-end personalized proactive health program that brings
+                            together predictive risk analysis, doctor-curated health packages, cutting-edge diagnostics
+                            with expert evaluation, and a personalized path to wellness, designed to make positive
+                            shifts – making you healthier. </p>
+
+                        <p>This health program is based on Apollo's pioneering efforts in preventive care for almost 40
+                            years and over 22 million health checks. </p>
+
+                        <p>Green Life ProHealth program can PREDICT health risks, help PREVENT ailments, and OVERCOME
+                            lifestyle diseases where possible.</p>
+                        <button class="btn btn-primary form-control">Book ProHealth</button>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+    <br>
+
+
+    <div style="background-color: rgba(242, 109, 38, 0.151);" >
+        <br>
+        <h4  style="text-align: center;" class="sec_title">The Green World of Care</h4>
+        <h2  style="text-align: center;">International Patient Care</h2>
+        <p  style="text-align: center;" class="mb-lg-4 mb-3">“Bringing healthcare of International standards within the reach of every individual.”</p>
+        <div class="row  ms-5">
+            <div class="col-md-6">
+                <div class="row ">
+                    <div class="col-md-4 py-2">
+                        <div class="card_M_international">
+                            <img src="assets/hospital.svg" alt="Book Appointment">
+                            <p>Hospitals</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 py-2">
+                        <div class="card_M_international">
+                            <img src="assets/ips_speciality.svg" alt="Book Appointment">
+                            <p>Speciality</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 py-2">
+                        <div class="card_M_international">
+                            <img src="assets/ips_planyourtrip.svg" alt="Book Appointment">
+                            <p>Plan Your Trip</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 py-2">
+                        <div class="card_M_international">
+                            <img src="assets/ips_testimonials.svg" alt="Book Appointment">
+                            <p>Testimonials</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 py-2">
+                        <div class="card_M_international">
+                            <img src="assets/ips_faq.svg" alt="Book Appointment">
+                            <p>FAQ's</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 py-2">
+                        <div class="card_M_international">
+                            <img src="assets/ips_doctor.svg" alt="Book Appointment">
+                            <p>Find A Doctor</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 py-2">
+                        <div class="card_M_international">
+                            <img src="assets/ips_onlineconsultation.svg" alt="Book Appointment">
+                            <p>Online Consultation</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 py-2">
+                        <div class="card_M_international">
+                            <img src="assets/ips_Apollo Insurance.svg" alt="Book Appointment">
+                            <p>Insurance</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 py-2">
+                        <div class="card_M_international">
+                            <img src="assets/ips_visa.svg" alt="Book Appointment">
+                            <p>Visa</p>
+                        </div>
+                    </div>
+                </div>
+
+                <button style="width: 93%; border-radius: 20px; border-color: rgba(242, 109, 38, 0.76); background-color: rgb(242, 109, 38);" class="py-2"><b> Number </b><img src="phone_logo.png" alt="" width="3%">
+                   <b> +88 02 9612345-54 </b></button>
+            </div>
+            <div class="col-md-6 py-2"><img src="assets/larg2.jpeg" height="70%"></div>
+        </div>
+    </div>
+    <ul class="nav nav-pills justify-content-center" style="background-color: rgb(242, 110, 38);" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active text1" href="#home"
+                style="border: 0cap ; background-color: rgb(242, 110, 38); color: white;">Doctors At This Moment</a>
+        </li>
+    </ul> <br>
+    <div class="container d-flex justify-content-center">
+        <a class=" d-flex justify-content-center dr_image" href="dr-kamrul.html"> <img  src="assets/dr-md-kamrul.png"> </a>
+        <a class=" d-flex justify-content-center dr_image" href="dr-munshi.html"> <img  src="assets/dr-munshi.png"> </a>
+        <a class=" d-flex justify-content-center dr_image"> <img  src="assets/dr-anwar.png"> </a>
+        <a class=" d-flex justify-content-center dr_image" href="dr-akbr.html"> <img  src="assets/dr-akbr.png"> </a>
+        <a class=" d-flex justify-content-center dr_image"> <img  src="assets/dr-nuruddin.png"> </a>
+        <a class="  d-flex justify-content-center dr_image"> <img  src="assets/dr-faizul.png"> </a>
+        <a class=" d-flex justify-content-center dr_image"> <img  src="assets/prof-nasima.png"> </a>
+
+    </div>
+    <br>
+    <div class="row py-5 p-3" style="background-color: rgba(242, 109, 38, 0.151); cursor:default;">
+        <div class="col-md-1"></div>
+        <div class="col-md-6 ">
+            <h2>Why Choose Green Life  Hospital?</h2>
+            <p> Green Life  Hospital has a robust presence across the healthcare
+                ecosystem. From routine wellness &amp; preventive health care to innovative life-saving treatments and
+                diagnostic services, Apollo Hospitals has touched more than 200 million lives from over 150 countries.
+            </p>
+            <div class="row">
+                <div class="col-md-6">
+                        <div class="d-flex gap-4 py-3" style="align-items: center;">
+                            <div>
+                                <img src="assets/Hospitals.svg"
+                                    alt="">
+                            </div>
+                            <div >
+                                <h4>73+</h4>
+                                <div>Largest private healthcare network of Hospitals</div>
+                            </div>
+                        </div>
+                </div>
+                <div class="col-md-6 py-2">
+                    <div class="d-flex gap-3 py-3" style="align-items: center;">
+                         
+                            <div >
+                                <img src="assets/Clinics.svg"
+                                    alt="" class="point_icon">
+                            </div>
+                            <div >
+                                <h4><span class="counter-holder">700</span>+</h4>
+                                <div>Largest private network of clinics across Bangladesh</div>
+                            </div>
+                        
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="d-flex gap-3 py-3" style="align-items: center;">
+                         
+                            <div >
+                                <img src="assets/Diagnostic.svg"
+                                    alt="" class="point_icon">
+                            </div>
+                            <div >
+                                <h4><span class="counter-holder">2,300</span>+</h4>
+                                <div>Diagnostic centres across Bangladesh</div>
+                            </div>
+                    </div>
+                </div>
+                <div class="col-md-6 ">
+                    <div class="d-flex gap-3 py-3" style="align-items: center;">
+                         
+                            <div >
+                                <img src="assets/Pharmacies.svg"
+                                    alt="" class="point_icon">
+                            </div>
+                            <div >
+                                <h4><span class="counter-holder">6,000</span>+</h4>
+                                <div>Pharmacies</div>
+                            </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="d-flex gap-3 py-3" style="align-items: center;">
+                         
+                            <div >
+                                <img src="assets/0location.svg"
+                                    alt="" class="point_icon">
+                            </div>
+                            <div >
+                                <h4><span class="counter-holder">10,000</span>+</h4>
+                                <div>Pin codes Served across Bangladesh</div>
+                            </div>
+
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="d-flex gap-3 py-3" style="align-items: center;">
+                         
+                            <div >
+                                <img src="assets/Doctors-2.svg"
+                                    alt="" class="point_icon">
+                            </div>
+                            <div >
+                                <h4><span class="counter-holder">11,000</span>+</h4>
+                                <div>Doctors</div>
+                            </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="d-flex gap-3 py-3" style="align-items: center;">
+                         
+                            <div >
+                                <img src="assets/hospital-bed.svg"
+                                    alt="" class="point_icon">
+                            </div>
+                            <div >
+                                <h4><span class="counter-holder">10,000</span>+</h4>
+                                <div>Beds</div>
+                            </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="col-md-4">
+
+            <img src="assets/larg.jpg" style="border-radius: 10px;" width="100%" height="500px"
+                alt="...">
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+    <!-- footer -->
+
+
+<app-footer></app-footer>

@@ -1,0 +1,32 @@
+
+<div class="d-flex">
+    <!-- Sidebar -->
+    <div class="sidebar" style="background-color: black;">
+        <br> <h4>Dashboard</h4>
+        <a routerLink="lab_test">Test Management</a>
+        <a routerLink="lab_report">Report Management</a>
+        <a routerLink="lab_inventory">Inventory Management</a>
+        <a routerLink="invoice">Invoice Search</a>
+        <!-- <a routerLink="pres_create/:id">Nurse</a> -->
+        <a routerLink="prescription">Report Create</a>
+        <a routerLink="prescription">Patient History</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content w-100">
+        <!-- Header -->
+        <div class="header">
+            <h5>Welcome, User</h5>
+            <div class="d-flex align-items-center">
+                <span class="me-3">{{date}} | {{time}}</span>
+            </div>
+        </div>
+
+        <!-- Placeholder for Router Content -->
+        <div>
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
+
+

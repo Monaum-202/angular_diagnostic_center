@@ -1,0 +1,52 @@
+<div class="container mt-5">
+    <table class="table table-light table-striped table-hover table-bordered text-center">
+        <thead class="table-secondary">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Bill Date</th>
+                <th scope="col">Patient Type</th>
+                <th scope="col">Patient Name</th>
+                <th scope="col">Sex</th>
+                <th scope="col">Age</th>
+                <th scope="col">specimen</th>
+                <th scope="col">Mobile No</th>
+                <th scope="col">Invoice Time</th>
+                <th scope="col">Dr. Code</th>
+                <th scope="col">Invoice No</th>
+                <th scope="col">Sample No</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let val of customerList">
+                <td>{{ val.id }}</td>
+                <td>{{ val.billDate }}</td>
+                <td>{{ val.patientType }}</td>
+                <td>{{ val.patientName }}</td>
+                <td>{{ val.sex }}</td>
+                <td>{{ val.age }}</td>
+                <td>{{ val.specimen }}</td>
+                <td>{{ val.bedMobileNo }}</td>
+                <td>{{ val.invTime }}</td>
+                <td>{{ val.drCode }}</td>
+                <td>{{ val.invoiceNo }}</td>
+                <td>{{ val.sampleNo }}</td>
+                <td>
+                    
+                    <div><a [routerLink]="['/lab/report_print/', val.id]" aria-label="Edit Appointment">
+                        <button class="btn btn-dark btn-sm">Report</button>
+                    </a></div><br>
+                    <div>
+                    <button type="button" class="btn btn-success btn-sm"
+                        (click)="deleteUser(val.id)">Done</button></div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- <div class="text-end">
+        <a routerLink="/sc">
+            <button type="button" class="btn btn-outline-dark ">Create New Student</button>
+        </a>
+    </div> -->
+</div>

@@ -1,0 +1,204 @@
+{
+  "appointments": [
+    {
+      "id": "1",
+      "patientName": "Fahim",
+      "phoneNumber": "+88 01234 567890",
+      "email": "fahim@yahoo.com",
+      "address": "123 Main Street",
+      "doctorName": "Dr. Smith",
+      "appointmentDate": "2023-09-20",
+      "appointmentTime": "14:30",
+      "message": "Need consultation for fever."
+    },
+    {
+      "id": "2",
+      "patientName": "Khalid",
+      "phoneNumber": "+88 09876 543210",
+      "email": "khalid@gmail.com",
+      "address": "456 Elm Street",
+      "doctorName": "Dr. Brown",
+      "appointmentDate": "2023-09-21",
+      "appointmentTime": "10:00",
+      "message": "Follow-up visit."
+    },
+    {
+      "id": "676a",
+      "patientName": "Monaum",
+      "phoneNumber": "01567941202",
+      "email": "monaum.202@gmail.com",
+      "address": "24/223,west joydebpur",
+      "doctorName": "Dr. Sarmin Islam",
+      "appointmentDate": "2024-12-25",
+      "appointmentTime": "22:00",
+      "message": "Follow-up visit"
+    },
+    {
+      "id": "2d69",
+      "patientName": "Sarmin",
+      "phoneNumber": "01904837784",
+      "email": "sarmin11@gmail.com",
+      "address": "Narayanganj",
+      "doctorName": "Dr. Monaum",
+      "appointmentDate": "2024-12-27",
+      "appointmentTime": "12:37",
+      "message": "Follow Up"
+    }
+  ],
+  "prescription": [
+    {
+      "id": "1",
+      "patientName": "Fahim",
+      "age": 30,
+      "gender": "male",
+      "medicationName": "Paracetamol",
+      "frequency": "Twice a day",
+      "duration": "5 days",
+      "investigation": "Blood Test",
+      "diagnosis": "Flu",
+      "message": "Patient feeling mild fever and headache."
+    },
+    {
+      "id": "2",
+      "patientName": "Khalid",
+      "age": 27,
+      "gender": "female",
+      "medicationName": "Ibuprofen",
+      "frequency": "Once a day",
+      "duration": "3 days",
+      "investigation": "MRI",
+      "diagnosis": "Migraine",
+      "message": "Patient experiencing chronic headaches."
+    },
+    {
+      "id": "676a",
+      "patientName": "Monaum",
+      "age": 25,
+      "gender": "male",
+      "medicationName": "Napa",
+      "frequency": "Twice a day",
+      "duration": "7 day",
+      "investigation": "X-Ray",
+      "diagnosis": "AR",
+      "message": "sfsfs"
+    },
+    {
+      "id": "2d69",
+      "patientName": "Sarmin",
+      "age": 25,
+      "gender": "female",
+      "medicationName": "Napa",
+      "frequency": "Twice a day",
+      "duration": "7 day",
+      "investigation": "X-Ray",
+      "diagnosis": "AR",
+      "message": "sfsfs"
+    }
+  ],
+  "signup": [
+    {
+      "id": "1",
+      "name": "monaum",
+      "email": "monaum14@gmail.com",
+      "pass": "75315963",
+      "Cpass": "75315963",
+      "phone": "01567941202",
+      "role": "HR"
+    },
+    {
+      "id": "309c",
+      "name": "moanaum",
+      "email": "monaum14@gmail.com",
+      "pass": "456123",
+      "Cpass": "456123",
+      "phone": "01567941202",
+      "role": "Doctor"
+    },
+    {
+      "id": "f9f3",
+      "name": "fahim",
+      "email": "lab@gmail.com",
+      "pass": "123",
+      "Cpass": "123",
+      "phone": "01949976024",
+      "role": "Lab"
+    }
+  ],
+  "lab_customer": [
+    {
+      "id": "1",
+      "billDate": "2024-12-29",
+      "patientType": "OUTDOOR",
+      "patientName": "MD. BAHAR UDDIN",
+      "sex": "Male",
+      "age": "68Y 0M 8D",
+      "specimen": "Blood",
+      "bedMobileNo": "01740298801",
+      "invTime": "12/29/2024 7:30",
+      "drCode": "0001 - DR JUBAIDA KHANAM CHOWDHURY MBBS, M",
+      "invoiceNo": "24122083",
+      "sampleNo": "001",
+      "default": false
+    },
+    {
+      "id": "2",
+      "billDate": "2024-12-28",
+      "patientType": "INDOOR",
+      "patientName": "FAHIM AHMED",
+      "sex": "Male",
+      "age": "45Y 3M 10D",
+      "specimen": "Urine",
+      "bedMobileNo": "01712345678",
+      "invTime": "12/28/2024 10:15",
+      "drCode": "0002 - DR AFROZA SULTANA MBBS, MD",
+      "invoiceNo": "24122084",
+      "sampleNo": "002",
+      "default": false
+    },
+    {
+      "id": "3",
+      "billDate": "2024-12-27",
+      "patientType": "OUTDOOR",
+      "patientName": "SALMA BEGUM",
+      "sex": "Female",
+      "age": "52Y 5M 20D",
+      "specimen": "Blood",
+      "bedMobileNo": "01876543210",
+      "invTime": "12/27/2024 09:00",
+      "drCode": "0003 - DR RAHMAT ALI MBBS, MS",
+      "invoiceNo": "24122085",
+      "sampleNo": "003",
+      "default": true
+    },
+    {
+      "id": "4",
+      "billDate": "2024-12-26",
+      "patientType": "OUTDOOR",
+      "patientName": "RAFIQUL ISLAM",
+      "sex": "Male",
+      "age": "60Y 6M 15D",
+      "specimen": "Stool",
+      "bedMobileNo": "01711111111",
+      "invTime": "12/26/2024 11:45",
+      "drCode": "0004 - DR SHAMSUL KABIR MBBS, FRCS",
+      "invoiceNo": "24122086",
+      "sampleNo": "004",
+      "default": false
+    },
+    {
+      "id": "5",
+      "billDate": "2024-12-25",
+      "patientType": "INDOOR",
+      "patientName": "JANNATUL FERDOUS",
+      "sex": "Female",
+      "age": "32Y 1M 5D",
+      "specimen": "Blood",
+      "bedMobileNo": "01722222222",
+      "invTime": "12/25/2024 08:30",
+      "drCode": "0005 - DR FARHANA AKHTAR MBBS, FCPS",
+      "invoiceNo": "24122087",
+      "sampleNo": "005",
+      "default": false
+    }
+  ]
+}

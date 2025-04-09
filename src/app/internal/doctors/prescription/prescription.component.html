@@ -1,0 +1,79 @@
+<form [formGroup]="prescriptionsForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="patientName">Patient Name:</label>
+    <input type="text" id="patientName" formControlName="patientName">
+  </div>
+  <div>
+    <label for="age">Age:</label>
+    <input type="number" id="age" formControlName="age">
+  </div>
+
+  <div>
+    <label for="gender">Gender:</label>
+    <select id="gender" formControlName="gender">
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+      <option value="Other">Other</option>
+    </select>
+  </div>
+<div class="container">
+  <table>
+    <thead>
+      <tr>
+        <th>Sr No.</th>
+        <th>Medicine Name</th>
+        <th>Dose</th>
+        <th>Frequency</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let prescription of prescriptions.controls; let i = index" >
+        <td>{{ i + 1 }}</td>
+        <!-- <td>
+          <mat-form-field style="width: 200px;">
+            <input type="text" matInput formControlName="medicineName" [matAutocomplete]="auto">
+            <mat-autocomplete #auto="matAutocomplete">
+              <mat-option *ngFor="let med of prescription.get('filteredMedicines')?.value" [value]="med.medicineName">
+                {{ med.medicineName }}
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
+        </td> -->
+        <td>
+          <select formControlName="medicineName">
+            <option *ngFor="let med of medicines" [value]="med.medicationName">{{ med.medicineName }}</option>
+          </select>
+        </td>
+        <td><input type="text" formControlName="dose"></td>
+        <td><input type="text" formControlName="frequency"></td>
+        
+          <button type="button" class="remove-btn" (click)="removeRow(i)">❌</button>
+        
+      </tr>
+    </tbody>
+  </table>
+  <button (click)="addRow()">➕ Add Row</button>
+</div>
+<div>
+  <label for="investigation">Investigation:</label>
+  <input type="text" id="investigation" formControlName="investigation">
+</div>
+
+<div>
+  <label for="diagnosis">Diagnosis:</label>
+  <input type="text" id="diagnosis" formControlName="diagnosis">
+</div>
+
+<div>
+  <label for="message">Message:</label>
+  <textarea id="message" formControlName="message"></textarea>
+</div>
+<div class="mt-4 text-center">
+  <button type="submit" class="btn btn-dark">Submit</button>
+</div>
+</form>
+
+
+
+

@@ -1,0 +1,51 @@
+<br>
+<div class="row">
+    <div class="col-md-4">
+        <div class="card text-white bg-primary">
+            <div class="card-body">
+                <h5 class="card-title">Total Patients</h5>
+                <p class="card-text display-6">{{ patientList.length }}</p> <!-- Dynamically show total patients -->
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card text-white bg-success">
+            <div class="card-body">
+                <h5 class="card-title">Appointments Today</h5>
+                <p class="card-text display-6">--</p> <!-- Update dynamically if you track today's appointments -->
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card text-white bg-danger">
+            <div class="card-body">
+                <h5 class="card-title">Pending Tasks</h5>
+                <p class="card-text display-6">8</p> <!-- Update dynamically if you track pending tasks -->
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+
+<table class="table table-striped table-bordered">
+    <thead class="table-dark text-center">
+        <tr>
+            <th style="width: 8%;">ID</th>
+            <th style="width: 15%;">Patient Name</th>
+            <th style="width: 15%;">Phone Number</th>
+            <th style="width: 18%;">Email</th>
+            <th style="width: 25%;">Address</th>
+            <th style="width: 20%;">Message</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let appointment of patientList">
+            <td class="text-center">{{ appointment.id }}</td>
+            <td>{{ appointment.patientName }}</td>
+            <td>{{ appointment.contactNumber }}</td>
+            <td>{{ appointment.email }}</td>
+            <td>{{ appointment.address }}</td>
+            <td>{{ appointment.message }}</td>
+        </tr>
+    </tbody>
+</table>

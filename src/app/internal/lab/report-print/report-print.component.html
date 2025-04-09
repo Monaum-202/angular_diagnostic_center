@@ -1,0 +1,119 @@
+<div  #contentToPrint>
+
+
+
+
+
+<div class="container" >
+    <div class="header">Patient's Information</div>
+    <div>Name: {{ customer.patientName }}</div>
+    <div>Age: {{ customer.age }}</div>
+    <div>Sex: {{ customer.sex }}</div>
+    <div>Bill Date: {{ customer.billDate }}</div>
+    <div>Patient Type: {{ customer.patientType }}</div>
+    <div>Specimen: {{ customer.specimen }}</div>
+    <div>Bed/Mobile No: {{ customer.bedMobileNo }}</div>
+    <div>Inv Time: {{ customer.invTime }}</div>
+    <div>Dr. Code: {{ customer.drCode }}</div>
+    <div style="font-weight: bolder;">Invoice No: {{ customer.invoiceNo }}</div>
+    <div style="font-weight: bolder;">Sample No: {{ customer.sampleNo}}</div>
+</div>
+
+
+
+
+<table class="results-table">
+    <thead>
+        <tr>
+            <th>Test Name</th>
+            <th>Result</th>
+            <th>Unit</th>
+            <th>Normal Range</th>
+            <th>Test Name</th>
+            <th>Print Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Plasma Glucose Fasting</td>
+            <td><input type="text"></td>
+            <td>mmol/L</td>
+            <td>3.6 - 5.9</td>
+            <td>Fasting Blood Sugar</td>
+            <td>Printed</td>
+        </tr>
+        <tr>
+            <td>Plasma Glucose 2hr-ABF</td>
+            <td><input type="text"></td>
+            <td>mmol/L</td>
+            <td>4.2 - 7.8</td>
+            <td>Blood Sugar (2 Hrs ABF)</td>
+            <td>Printed</td>
+        </tr>
+        <tr>
+            <td>S. Urea</td>
+            <td><input type="text"></td>
+            <td>mg/dl</td>
+            <td>10 - 40</td>
+            <td>S. Urea</td>
+            <td>Printed</td>
+        </tr>
+        <tr>
+            <td>Sodium (Na+)</td>
+            <td><input type="text"></td>
+            <td>mmol/L</td>
+            <td>136 - 145</td>
+            <td>S. Electrolytes</td>
+            <td>Printed</td>
+        </tr>
+        <tr>
+            <td>Potassium (K+)</td>
+            <td><input type="text"></td>
+            <td>mmol/L</td>
+            <td>3.5 - 5.1</td>
+            <td>S. Electrolytes</td>
+            <td>Printed</td>
+        </tr>
+        <tr>
+            <td>Chloride (Cl-)</td>
+            <td><input type="text"></td>
+            <td>mmol/L</td>
+            <td>96 - 107</td>
+            <td>S. Electrolytes</td>
+            <td>Printed</td>
+        </tr>
+        <tr>
+            <td>Bicarbonate (HCO3)</td>
+            <td><input type="text"></td>
+            <td>mmol/L</td>
+            <td>22 - 29</td>
+            <td>S. Electrolytes</td>
+            <td>Printed</td>
+        </tr>
+        <tr>
+            <td>HbA1C</td>
+            <td><input type="text"></td>
+            <td>%</td>
+            <td>4.2 - 6.5</td>
+            <td>HbA1C</td>
+            <td>Printed</td>
+        </tr>
+        <tr>
+            <td>C-Reactive Protein</td>
+            <td><input type="text"></td>
+            <td>mg/l</td>
+            <td>&lt; 10.0</td>
+            <td>CRP</td>
+            <td>Printed</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+<br>
+    <div class="text-end">
+        <a routerLink="/lab/lab-test">
+            <button type="button" style="color: aliceblue;" class="btn btn-primary btn-outline-dark " (click)="print()">Submit</button>
+        </a>
+    </div>
+    
+    

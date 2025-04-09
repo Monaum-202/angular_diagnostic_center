@@ -1,0 +1,75 @@
+<div class="d-flex">
+   
+    <div class="main-content ">
+      <div class="product-list-container">
+        <div class="header">
+        </div>
+  
+        <div class="toolbar">
+          <div class="toolbar-left">
+            <button routerLink="/signup" class="btn add-product">+</button>
+            <input type="date" placeholder="Date Range" class="date-range-input" />
+          </div>
+          <div class="toolbar-right">
+            <!-- <input type="text" [(ngModel)]="searchTest" placeholder="Search" class="search-input"
+              aria-label="Search Product Category" />
+            <button class="btn search-btn" (click)="search()" aria-label="Search"> -->
+              <!-- Search
+            </button> -->
+          </div>
+        </div>
+  
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>userName</th>
+              <th>userFirstName</th>
+              <th>userLastName</th>
+              <th>email</th>
+              <th>enabled</th>
+              <th>credentialsNonExpired</th>
+              <th>accountNonExpired</th>
+              <th>accountNonLocked</th>
+                <th>roles</th>
+                <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let user of usersList">
+                <td>{{ user.userName }}</td>
+                <td>{{ user.userFirstName }}</td>
+                <td>{{ user.userLastName }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.enabled }}</td>
+                <td>{{ user.credentialsNonExpired }}</td>
+                <td>{{ user.accountNonExpired }}</td>
+                <td>{{ user.accountNonLocked }}</td>
+                <td>{{ user.roles }}</td>
+              <td style="text-align: center;">
+                <a [routerLink]="['/admin/role_set/', user.userName]">
+                  <button class="btn1">
+                    <img src="assets/pen.png" alt="Edit" class="icon">
+                  </button>
+                </a>
+                |
+                <button class="btn1" (click)="deletecategory(user.userName)">
+                  <img src="/assets/bin.png" alt="Delete" class="icon">
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+  
+        <!-- Pagination Controls -->
+        <!-- <div class="pagination">
+          <button (click)="goToPage(currentPage - 1)" class="pagination-btn">
+            Previous
+          </button>
+          <span>Page {{ currentPage + 1 }} of {{ totalPages }}</span>
+          <button (click)="goToPage(currentPage + 1)" class="pagination-btn">
+            Next
+          </button>
+        </div> -->
+      </div>
+    </div>
+</div>

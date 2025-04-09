@@ -1,0 +1,1537 @@
+searchText: string = '';
+  filteredMedicines: string[] = [];
+
+  // Filter the medicines based on user input
+  filterMedicines(): void {
+    if (this.searchText.trim() === '') {
+      this.filteredMedicines = [];
+    } else {
+      this.filteredMedicines = this.mList.filter(med =>
+        med.toLowerCase().includes(this.searchText.toLowerCase())
+      );
+    }
+  }
+
+  // Handle the selection of a medicine
+  selectMedicine(medicine: string): void {
+    this.searchText = medicine; // Set the input value
+    this.filteredMedicines = []; // Clear the dropdown suggestions
+    console.log('Selected Medicine:', medicine); // Perform any additional action
+  }
+
+
+
+
+
+
+
+
+  <div class="mb-3">
+                <label for="Medicine" class="form-label">Medicine</label>
+                <select class="form-select" id="Medicine" (change)="addMedicin($event)">
+                  <option value="{{val}}" *ngFor="let val of mList">{{val}}</option>
+                </select>
+              </div>
+
+              <div class="mb-3">
+                <label for="Medicine" class="form-label">Frequency</label>
+                <select class="form-select" id="Medicine" (change)="addFrequency($event)">
+                  <option value="{{val}}" *ngFor="let val of mList">{{val}}</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="Medicine" class="form-label">Duration</label>
+                <select class="form-select" id="Medicine" (change)="addMedicin($event)">
+                  <option value="{{val}}" *ngFor="let val of mList">{{val}}</option>
+                </select>
+              </div>
+
+
+
+            </div>
+
+
+            <div class="mb-3">
+              <label for="Medicine" class="form-label">Diagnosis</label>
+              <select class="form-select" id="Medicine" (change)="addMedicin($event)">
+                <option value="{{val}}" *ngFor="let val of mList">{{val}}</option>
+              </select>
+            </div>
+
+
+
+
+
+
+
+
+
+            frequencyList: any[] = [];
+  addFrequency(event: any) {
+    const selectedValue = event.target.value;
+    this.frequencyList.push(selectedValue);
+  }
+  fList: any[] = [
+    
+    "1-0-1",
+    "1-0-0",
+    "0-1-0",
+    "0-0-1",
+    "1-1-0",
+    "0-1-1",
+    "1-1-1"
+  ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h4 class="text-center mb-4">Patient Appointment Form</h4>
+    <div class="d-flex justify-content-between">
+        <div>Name: {{ prescription.patientName || "hello world" }}</div>
+        <div>Age/Sex: {{ prescription.age }}/{{ prescription.gender }}</div>
+        <div>Date: {{ prescription.date || 'N/A' }}</div>
+      </div>
+
+<div class="form-container mt-5">
+    
+    <form [formGroup]="prescriptionsForm" (ngSubmit)="onSubmit()">
+        <!-- <div class="row g-3">
+            
+            <div class="col-md-6">
+                <label for="medicationName" class="form-label">
+                    Medication Name <span class="text-danger">*</span></label>
+                <input type="text" formControlName="medicationName" class="form-control" id="medicationName"
+                    placeholder="Enter Medicine" />
+            </div>
+            <div class="col-md-6">
+                <label for="frequency" class="form-label">Frequency<span class="text-danger">*</span></label>
+                <input class="form-control" formControlName="frequency" id="frequency" rows="3"
+                    placeholder="Enter frequency" required />
+            </div>
+            <div class="col-md-6">
+                <label for="duration" class="form-label">Duration<span class="text-danger">*</span></label>
+                <input class="form-control" formControlName="duration" id="duration" rows="3"
+                    placeholder="Enter duration" required />
+            </div>
+            <div class="col-md-6">
+                <label for="investigation" class="form-label">Investigation<span class="text-danger">*</span></label>
+                <input class="form-control" formControlName="investigation" id="investigation" rows="3"
+                    placeholder="Enter investigation" required />
+            </div>
+            <div class="col-md-6">
+                <label for="diagnosis" class="form-label">Diagnosis<span class="text-danger">*</span></label>
+                <input class="form-control" formControlName="diagnosis" id="diagnosis" rows="3"
+                    placeholder="Enter diagnosis" required />
+            </div>
+
+            <div class="col-md-6">
+                <label for="message" class="form-label">Message</label>
+                <textarea class="form-control" formControlName="message" id="message" rows="3"
+                    placeholder="Enter additional details"></textarea>
+            </div>
+
+          </div> -->
+
+
+          <div class="row mb-3">
+            <div class="col">
+              <label for="Medicine" class="form-label">Medicine</label>
+              <input type="search" (input)="medicineInput()" class="form-control" id="Medicine" placeholder="Search Medicine">
+              <select>
+                <option *ngFor="let ms of medicineSuggestion">{{ms.medicineName}}</option>
+              </select>
+            </div>
+          
+            <div class="col">
+              <label for="Frequency" class="form-label">Frequency</label>
+              <select class="form-select" id="Frequency" (change)="addFrequency($event)">
+                <option value="{{val}}" *ngFor="let val of fList">{{val}}</option>
+              </select>
+            </div>
+
+
+            <!-- <div class="col">
+              <label for="Frequency" class="form-label">Frequency</label>
+            
+              
+              <div class="input-group">
+                
+                <input type="text" class="form-control" id="FrequencyInput" placeholder="Enter or select frequency">
+            
+                
+                <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                  <span class="visually-hidden">Toggle Dropdown</span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <li *ngFor="let val of fList">
+                    <a class="dropdown-item" href="#" (click)="selectFrequency(val)">{{ val }}</a>
+                  </li>
+                </ul>
+              </div>
+            </div> -->
+            
+          
+            <div class="col">
+              <label for="Duration" class="form-label">Duration</label>
+              <select class="form-select" id="Duration" (change)="addduration($event)">
+                <option value="{{val}}" *ngFor="let val of dList">{{val}}</option>
+              </select>
+            </div>
+          </div>
+          
+          
+              
+
+
+              <div class="mb-3">
+                <label for="Medicine" class="form-label">Diagnosis</label>
+                <select class="form-select" id="Medicine" (change)="addInvestigation($event)">
+                  <option value="{{val}}" *ngFor="let val of iList">{{val}}</option>
+                </select>
+
+
+              </div>
+
+
+              <div class="mb-3">
+                <label for="Medicine" class="form-label">Investigation</label>
+                <select class="form-select" id="Medicine" (change)="addDiagnosis($event)">
+                  <option value="{{val}}" *ngFor="let val of diaList">{{val}}</option>
+                </select>
+
+              </div>
+
+
+
+              
+                
+
+                <div class="d-flex justify-content-between">
+              <div class="mb-3">
+                <label for="Medicine" class="form-label">Medicine List</label>
+              <ol>
+                <li *ngFor="let v of selectedMedicineList; let index = index" >{{v}} </li>
+              </ol>
+              </div> 
+              <div class="mb-3">
+                <label for="frequency" class="form-label">Frequency</label>
+              <ol>
+                <li *ngFor="let v of frequencyList; let index = index" >{{v}} </li>
+              </ol>
+              </div>       
+              <div class="mb-3">
+                <label for="Medicine" class="form-label">Duration</label>
+              <ol>
+                <li *ngFor="let v of durationList; let index = index" >{{v}} <button (click)="deleteFromList(index)">Delete</button></li>
+              </ol>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="Medicine" class="form-label">Diagnosis</label>
+            <ol>
+              <li *ngFor="let v of investigationList; let index = index" >{{v}} <button (click)="deleteFromList(index)">Delete</button></li>
+            </ol>
+            </div>
+
+            <div class="mb-3">
+              <label for="Diagnosis" class="form-label">Investigation</label>
+            <ol>
+              <li *ngFor="let v of diagnosisList; let index = index" >{{v}} <button (click)="deleteFromList(index)">Delete</button></li>
+            </ol>
+            </div>
+
+
+        <!-- <div class="mb-3">
+            <label for="Medicine" class="form-label">Medicine</label>
+            <input 
+              type="text" 
+              class="form-control" 
+              id="Medicine" 
+              placeholder="Search for medicine..." 
+              [(ngModel)]="searchText" 
+              (input)="filterMedicines()">
+            
+            <div class="dropdown-menu show" *ngIf="mList.length > 0">
+              <button 
+                class="dropdown-item" 
+                *ngFor="let medicine of mList" 
+                (click)="selectMedicine(medicine)">
+                {{ medicine }}
+              </button>
+            </div>
+          </div> -->
+          
+
+
+        <div class="mt-4 text-center">
+            <button type="submit" class="btn btn-dark">Submit</button>
+        </div>
+    </form>
+</div>
+
+
+
+
+import { Component } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { PrescriptionService } from 'src/app/service/prescription/prescription.service';
+
+@Component({
+  selector: 'app-prescription-create',
+  templateUrl: './prescription-create.component.html',
+  styleUrls: ['./prescription-create.component.scss']
+})
+export class PrescriptionCreateComponent {
+  medicineSuggestion : any[] = []
+  medicineInput() {
+    let text = (document.getElementById('Medicine') as (HTMLInputElement) ).value;
+    console.log(text);
+    
+    if(text){
+      this.prescriptionService.seach(text).subscribe((v:any)=>{
+        console.log(v);
+        
+        this.medicineSuggestion = v.content;
+      })
+    }
+  }
+  deleteFromList(_t72: any) {
+    console.log(_t72);
+  }
+  constructor(
+    private prescriptionService: PrescriptionService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) { }
+
+
+  id!: any;
+  prescriptionList!: any
+
+
+  prescriptionsForm: FormGroup = new FormGroup({
+    id: new FormControl(),
+    patientName: new FormControl(),
+    age: new FormControl(),
+    gender: new FormControl(),
+    medicationName: new FormControl(),
+    frequency: new FormControl(),
+    duration: new FormControl(),
+    investigation: new FormControl(),
+    diagnosis: new FormControl(),
+    message: new FormControl(),
+  })
+
+  onSubmit() {
+    this.prescriptionService.addData(this.prescriptionsForm.value).subscribe((val: any) => {
+      console.log("Prescription created succesfully");
+      console.log(this.prescriptionsForm.value);
+
+      this.router.navigateByUrl('doctor/prescription_pad/' + val.id)
+    })
+  }
+
+  // prescription: any
+  // ngOnInit(): void {
+  //   this.id = this.route.snapshot.params['pId']
+  //   this.prescriptionService.getById(this.id).subscribe((val: any) => {
+  //     this.prescription = val;
+  //     console.log(this.prescriptionList);
+
+  //     this.prescriptionForm.setValue(this.prescriptionList)
+
+
+
+
+  //     const id = this.route.snapshot.paramMap.get('pId');
+  //     if (id) {
+  //       this.prescriptionService.getById(id).subscribe((val: any) => {
+  //         this.prescription = val;
+  //         console.log(val);
+
+  //       });
+  //     }
+  //     this.prescriptionService.getAll().subscribe((val: any) => {
+  //       this.prescriptionList = val;
+  //     });
+  //   })
+  // }
+
+
+  prescription: any = {patientName : "", age : "", date:""}
+  ngOnInit(): void {
+    this.id = this.route.snapshot.paramMap.get('pId');
+
+    this.prescriptionService.getById(this.id).subscribe((val: any) => {
+      this.prescription = val;
+      console.log(this.prescription);
+
+      this.prescriptionsForm.setValue(this.prescriptionList)
+
+
+
+
+      // const id = this.route.snapshot.paramMap.get('cId');
+      console.log(this.id);
+
+      if (this.id) {
+        this.prescriptionService.getById(this.id).subscribe((val: any) => {
+          this.prescription = val;
+          console.log(val);
+
+        });
+      }
+      this.prescriptionService.getAll().subscribe((val: any) => {
+        this.prescriptionList = val;
+      });
+    })
+  }
+
+
+
+
+
+  selectedMedicineList: any[] = [];
+
+  addMedicin(event: any) {
+    const selectedValue = event.target.value;
+    this.selectedMedicineList.push(selectedValue);
+  }
+  mList: string[] = [
+    "",
+    "Abacavir Sulfate",
+    "Abatacept",
+    "Abilify",
+    "Acamprosate Calcium",
+    "Accretropin",
+    "Aceon",
+    "Aci-Jel",
+    "Acthrel",
+    "Actimmune",
+    "Actisite",
+    "Acular",
+    "Acular LS",
+    "Acuvail",
+    "Adagen",
+    "Adapalene",
+    "Adcirca",
+    "Adefovir Dipivoxil",
+    "Adenoscan",
+    "Adenosine",
+    "Adipex-P",
+    "AdreView",
+    "Advair HFA",
+    "Aerospan HFA",
+    "Agalsidase Beta",
+    "Aggrenox",
+    "Akineton",
+    "Alamast",
+    "Albenza",
+    "Aldactazide",
+    "Aldactone",
+    "Aldoril",
+    "Aldurazyme",
+    "Alemtuzumab",
+    "Alglucosidase Alfa",
+    "Allegra-D",
+    "Allegra D 24 Hour",
+    "Alli",
+    "Aloprim",
+    "Alora",
+    "Alphanate",
+    "Altace",
+    "Altocor",
+    "Altoprev",
+    "Alupent",
+    "Amantadine Hydrochloride",
+    "Amerge",
+    "Amifostine",
+    "Amiloride",
+    "Aminosalicylic Acid",
+    "Aminosyn II 8.5%",
+    "Amlodipine Besylate",
+    "Amoxapine",
+    "Amytal Sodium",
+    "Anabolic steroids",
+    "Anadrol-50",
+    "Antithrombin",
+    "Antivenin",
+    "Antivert",
+    "Aredia",
+    "Aricept",
+    "Armodafinil",
+    "Arranon",
+    "Artane",
+    "Asclera",
+    "Ascorbic Acid",
+    "Astemizole",
+    "Atacand",
+    "Atacand HCT",
+    "Atazanavir Sulfate",
+    "Atomoxetine HCl",
+    "Atridox",
+    "Atripla",
+    "Atropen",
+    "Augmentin XR",
+    "Avage",
+    "Avandia",
+    "Avastin",
+    "Avinza",
+    "Axid",
+    "Azasan",
+    "Azasite",
+    "Azelaic Acid",
+    "Azelastine Hydrochloride",
+    "Azilect",
+    "Azmacort",
+    "Balsalazide",
+    "Benazepril",
+    "Benzocaine",
+    "Benzoyl Peroxide Gel",
+    "Benzphetamine",
+    "Benztropine Mesylate",
+    "Bepreve",
+    "Betagan",
+    "Bethanechol",
+    "Betimol",
+    "Betoptic S",
+    "Bevacizumab",
+    "BiCNU",
+    "Biperiden",
+    "Bismuth Subcitrate Potassium",
+    "Bismuth Subsalicylate",
+    "Blocadren",
+    "Boniva",
+    "Bontril",
+    "Boostrix",
+    "Botulinum Toxin Type A",
+    "Bravelle",
+    "Brevibloc",
+    "Bromocriptine Mesylate",
+    "Brovana",
+    "Budesonide",
+    "Buprenorphine",
+    "Buspar",
+    "Buspirone",
+    "Busulfan",
+    "Busulfex",
+    "Cabergoline",
+    "Caduet",
+    "Calcitonin-Salmon",
+    "Calcium Chloride",
+    "Calcium Disodium Versenate",
+    "Calcium Gluconate",
+    "Campral",
+    "Canasa",
+    "Cancidas",
+    "Captopril",
+    "Carac",
+    "Carbatrol",
+    "Cardiolite",
+    "Carisoprodol",
+    "Carmustine",
+    "Carvedilol",
+    "Casodex",
+    "Caspofungin Acetate",
+    "Cataflam",
+    "Catapres",
+    "Catapres-TTS",
+    "Caverject",
+    "Cedax",
+    "Cefditoren Pivoxil",
+    "Cefixime",
+    "Cefizox",
+    "Cefotetan",
+    "Ceftazidime",
+    "Ceftibuten",
+    "Ceftin",
+    "Cefzil",
+    "Celestone Soluspan",
+    "Celexa",
+    "CellCept",
+    "Cellulose",
+    "Celontin",
+    "Cephalexin",
+    "Cerebyx",
+    "Ceretec",
+    "Cerubidine",
+    "Cerumenex",
+    "Cervidil",
+    "Cetirizine",
+    "Cetraxal",
+    "Cetrotide",
+    "Cetuximab",
+    "Chantix",
+    "Chibroxin",
+    "Chlorambucil",
+    "Chloramphenicol Sodium Succinate",
+    "Chloroprocaine",
+    "Chlorpheniramine Maleate",
+    "Chlorpromazine",
+    "Chlorpropamide",
+    "Chlorthalidone",
+    "Cholera Vaccine",
+    "Chorionic Gonadotropin",
+    "Ciclopirox Gel",
+    "Cilostazol",
+    "Cinobac",
+    "Cipro",
+    "Cipro XR",
+    "Cisapride",
+    "Clarinex",
+    "Clarithromycin",
+    "Claritin",
+    "Cleocin",
+    "Cleviprex",
+    "Climara Pro",
+    "Clinoril",
+    "Clobetasol Propionate",
+    "Clocortolone",
+    "Clofarabine",
+    "Clonidine",
+    "Clorazepate Dipotassium",
+    "Clorpres",
+    "Clotrimazole",
+    "Cocaine",
+    "Codeine",
+    "Cognex",
+    "Colazal",
+    "Colchicine",
+    "Colcrys",
+    "Colesevelam Hcl",
+    "Combivir",
+    "Conjugated Estrogens",
+    "Copaxone",
+    "Corgard",
+    "Cosmegen",
+    "Coumadin",
+    "Crolom",
+    "Cromolyn Sodium",
+    "Cubicin",
+    "Curosurf",
+    "Cuvposa",
+    "Cyanocobalamin",
+    "Cyclobenzaprine Hcl",
+    "Cyclophosphamide",
+    "Cyclosporine",
+    "Cylert",
+    "Cymbalta",
+    "Cyproheptadine",
+    "Cystadane",
+    "Cytogam",
+    "Cytomel",
+    "Dacarbazine",
+    "Daraprim",
+    "Darvocet-N",
+    "Darvon Compound",
+    "Dasatinib",
+    "Daunorubicin",
+    "Daypro",
+    "Daypro Alta",
+    "DDAVP Nasal Spray",
+    "Demadex",
+    "Demeclocycline HCl",
+    "Demser",
+    "Depacon",
+    "DepoDur",
+    "Desferal",
+    "Desogen",
+    "Desonate",
+    "DesOwen",
+    "Detrol",
+    "Detrol LA",
+    "Dexlansoprazole",
+    "Dexmethylphenidate Hydrochloride",
+    "Dexrazoxane",
+    "Diamox Sequels",
+    "Dicyclomine",
+    "Didanosine",
+    "Diethylpropion",
+    "Differin",
+    "Diflucan",
+    "Digoxin Immune Fab",
+    "Diovan HCT",
+    "Diphenhydramine",
+    "Diphtheria-Tetanus Vaccine",
+    "Diprolene AF",
+    "Dipyridamole",
+    "Ditropan",
+    "Dobutamine",
+    "Dofetilide",
+    "Dolophine",
+    "Donepezil Hydrochloride",
+    "Dopamine Hydrochloride",
+    "Dopar",
+    "Dopram",
+    "Doral",
+    "Doryx",
+    "Dorzolamide",
+    "Dovonex",
+    "Doxacurium Chloride",
+    "Doxapram",
+    "Doxazosin Mesylate",
+    "Doxepin",
+    "Doxercalciferol",
+    "Doxil",
+    "Doxycycline",
+    "Doxycycline Hyclate",
+    "Drisdol",
+    "Dronabinol",
+    "Drospirenone and Estradiol",
+    "Duetact",
+    "Duraclon",
+    "Dynacirc",
+    "Dynacirc CR",
+    "Dynapen",
+    "Dyphylline",
+    "Econazole Nitrate",
+    "Edrophonium",
+    "Efavirenz",
+    "Elaprase",
+    "Elavil",
+    "Eletriptan hydrobromide",
+    "Eligard",
+    "Ellence",
+    "Elmiron",
+    "Elspar",
+    "Emadine",
+    "Emcyt",
+    "Emedastine",
+    "Empirin",
+    "Emsam",
+    "Emtricitabine",
+    "Emtriva",
+    "Endocet",
+    "Endometrin",
+    "Enflurane",
+    "Engerix-B",
+    "Entereg",
+    "Eovist",
+    "Epinephrine",
+    "Epipen",
+    "Epirubicin hydrochloride",
+    "Epivir",
+    "Equetro",
+    "Eraxis",
+    "Erbitux",
+    "Ergocalciferol",
+    "Erlotinib",
+    "Erythrocin Stearate",
+    "Esomeprazole Sodium",
+    "Essential Amino Acids",
+    "Estrace",
+    "Estradiol",
+    "Estradiol Acetate",
+    "Estradiol valerate",
+    "Estratest",
+    "Estropipate",
+    "Eszopiclone",
+    "Etanercept",
+    "Ethacrynic Acid",
+    "Ethambutol",
+    "Ethinyl Estradiol",
+    "Ethiodol",
+    "Ethosuximide",
+    "Etidocaine HCl",
+    "Etidronate Disodium",
+    "Etopophos",
+    "Etrafon",
+    "Eulexin",
+    "Evista",
+    "Evoxac",
+    "Exelderm",
+    "Exjade",
+    "Extavia",
+    "Factor IX Complex",
+    "Factrel",
+    "Famciclovir",
+    "Famotidine Injection",
+    "Famvir",
+    "Fansidar",
+    "Febuxostat",
+    "Feridex I.V.",
+    "Fesoterodine Fumarate Extended",
+    "Finacea",
+    "Flector",
+    "Flonase",
+    "Florinef",
+    "Floxuridine",
+    "Fluconazole",
+    "Flucytosine",
+    "Fludara",
+    "Fludarabine Phosphate",
+    "Fludrocortisone",
+    "Flumazenil",
+    "FluMist",
+    "Fluocinolone Acetonide",
+    "Fluoroplex",
+    "Fluorouracil",
+    "Fluoxetine Hydrochloride",
+    "Flurbiprofen",
+    "Fluress",
+    "Fluticasone Propionate",
+    "Fluvirin",
+    "FML",
+    "Folic Acid",
+    "Follitropin Alfa",
+    "Follitropin Beta",
+    "Fomepizole",
+    "Foradil Aerolizer",
+    "Foradil Certihaler",
+    "Forane",
+    "Fosamax Plus D",
+    "Fosamprenavir Calcium",
+    "Foscavir",
+    "Fosphenytoin Sodium",
+    "Fragmin",
+    "Frovatriptan Succinate",
+    "Fulvestrant",
+    "Fungizone",
+    "Furadantin",
+    "Furosemide",
+    "Furoxone",
+    "Fuzeon",
+    "Gabitril",
+    "Gadobenate Dimeglumine",
+    "Gadofosveset Trisodium",
+    "Galsulfase",
+    "Gamunex",
+    "Geocillin",
+    "Geodon",
+    "Gleevec",
+    "Glucophage XR",
+    "Glucovance",
+    "Glyburide",
+    "Glycopyrrolate",
+    "Glynase",
+    "Glyset",
+    "Gold Sodium Thiomalate",
+    "Gonadorelin",
+    "Gonal-F",
+    "Gonal-f RFF",
+    "Grifulvin V",
+    "Griseofulvin",
+    "Guanethidine Monosulfate",
+    "Gynazole",
+    "Haemophilus b Conjugate Vaccine",
+    "Halcinonide",
+    "Haldol",
+    "Halobetasol Propionate",
+    "Haloperidol",
+    "Healon",
+    "HepaGam B",
+    "Heparin Lock Flush",
+    "HepatAmine",
+    "Hepatitis A Vaccine, Inactivated",
+    "Hepatitis B Immune Globulin",
+    "Hepflush-10",
+    "Herceptin",
+    "Hexachlorophene",
+    "HibTITER",
+    "Hivid",
+    "Human Secretin",
+    "Humira",
+    "Humulin N",
+    "Hyalgan",
+    "Hydrocodone Bitartrate and Acetaminophen",
+    "Hydroxyethyl Starch",
+    "Hylenex",
+    "Hyoscyamine",
+    "Hytrin",
+    "Ibuprofen Lysine",
+    "Idamycin",
+    "Idamycin PFS",
+    "Ifosfamide",
+    "Iloperidone",
+    "Imipramine",
+    "Imiquimod",
+    "Imitrex",
+    "Immune Globulin",
+    "Immune Globulin Intravenous",
+    "Implanon",
+    "Inderal LA",
+    "Indigo Carmine",
+    "InnoPran XL",
+    "Insulin",
+    "Insulin Aspart",
+    "Intelence",
+    "Intralipid 20%",
+    "Intuniv",
+    "Invanz",
+    "Invega",
+    "Inversine",
+    "Ionamin",
+    "Irinotecan Hydrochloride",
+    "Isentress",
+    "Ismo",
+    "Isocarboxazid",
+    "Isoptin SR",
+    "Isopto Carpine",
+    "Isopto Hyoscine",
+    "Istalol",
+    "Isuprel",
+    "Ixempra",
+    "Jalyn",
+    "Janumet",
+    "Je-Vax",
+    "K-LOR",
+    "Kaletra",
+    "Kariva",
+    "Kenalog",
+    "Kinlytic",
+    "Klonopin",
+    "Kuvan",
+    "Kytril",
+    "Labetalol",
+    "lacosamide",
+    "Lamisil",
+    "Lamivudine / Zidovudine",
+    "Latanoprost",
+    "Letairis",
+    "Letrozole",
+    "Leuprolide Acetate",
+    "Leustatin",
+    "Levalbuterol",
+    "Levaquin",
+    "Levemir",
+    "Levo-T",
+    "Levocabastine",
+    "Levofloxacin",
+    "Levonorgestrel",
+    "Levonorgestrel and Ethinyl Estradiol",
+    "Levonorgestrel Implants",
+    "Levonorgestrel, Ethinyl Estradiol",
+    "Lexapro",
+    "Lexiscan",
+    "Lexxel",
+    "Librium",
+    "Lidex",
+    "Lidoderm",
+    "Linezolid",
+    "Lipofen",
+    "Liposyn II",
+    "Liraglutide",
+    "Lisinopril and Hydrochlorothiazide",
+    "Locoid",
+    "Lodine",
+    "Loperamide Hcl",
+    "Lopid",
+    "Loprox Gel",
+    "Loracarbef",
+    "Lortab",
+    "Lotemax",
+    "Lotensin",
+    "Lotronex",
+    "Lovenox",
+    "Loxapine",
+    "Loxitane",
+    "Lucentis",
+    "Luvox CR",
+    "Lybrel",
+    "M-M-R",
+    "Malarone",
+    "Malathion",
+    "Mandol",
+    "Mangafodipir",
+    "Maraviroc",
+    "Marinol",
+    "Maxitrol",
+    "Mecasermin",
+    "Meclofenamate",
+    "Mefloquine",
+    "Melphalan",
+    "Menactra",
+    "Menest",
+    "Menotropins",
+    "Mephobarbital",
+    "Mequinol and Tretinoin",
+    "Meropenem",
+    "Merrem I.V.",
+    "Mesalamine",
+    "Mesna",
+    "Mestinon",
+    "Metadate ER",
+    "Metaglip",
+    "Metaproterenol Sulfate",
+    "Metaxalone",
+    "Metformin Hcl",
+    "Methadone Hydrochloride",
+    "Methadose Oral Concentrate",
+    "Methazolamide",
+    "Methenamine Hippurate",
+    "Methergine",
+    "Methohexital Sodium",
+    "Methyclothiazide",
+    "Methyldopa",
+    "Methylene Blue",
+    "Methylergonovine Maleate",
+    "Methylin",
+    "Methyltestosterone",
+    "Metipranolol",
+    "Metoclopramide",
+    "Metoprolol Tartrate",
+    "MetroLotion",
+    "Metyrapone",
+    "Metyrosine",
+    "Miacalcin",
+    "Micro-K",
+    "Micronase",
+    "Micronized Glyburide",
+    "Midazolam",
+    "Midodrine Hydrochloride",
+    "Milrinone",
+    "Minocin",
+    "Minocycline",
+    "Minoxidil",
+    "Miochol-E",
+    "Miostat",
+    "Mitomycin",
+    "Mobic",
+    "Modafinil",
+    "Monistat",
+    "Monistat-Derm",
+    "Morrhuate Sodium",
+    "Motrin",
+    "Moxatag",
+    "Mozobil",
+    "Multaq",
+    "Multi Vitamin",
+    "Multihance",
+    "Mustargen",
+    "Mutamycin",
+    "Myambutol",
+    "Mycamine",
+    "Mycelex",
+    "Mycophenolic Acid",
+    "Myfortic",
+    "Mykrox",
+    "Myobloc",
+    "Myochrysine",
+    "Nafcillin Sodium",
+    "Naftifine Hcl",
+    "Nalmefene Hydrochloride",
+    "Naltrexone",
+    "Naproxen",
+    "Nascobal",
+    "Natazia",
+    "Natrecor",
+    "Navelbine",
+    "Nebcin",
+    "Nebivolol Tablets",
+    "Nedocromil",
+    "Nelarabine",
+    "Nelfinavir Mesylate",
+    "NeoProfen",
+    "Neostigmine",
+    "Nephramine",
+    "Nesacaine",
+    "Neulasta",
+    "Nexavar",
+    "Niaspan",
+    "Nicotrol",
+    "Nicotrol NS",
+    "Nilandron",
+    "Nilotinib Capsules",
+    "Nimbex",
+    "Nimotop",
+    "Nitroglycerin",
+    "NitroMist",
+    "Nizatidine",
+    "Nizoral",
+    "Noctec",
+    "Nor-QD",
+    "Norethindrone and Ethinyl Estradiol",
+    "Noritate",
+    "Nortriptyline Hydrochloride",
+    "Norvasc",
+    "NovoLog Mix 70/30",
+    "Novoseven",
+    "Numorphan",
+    "Nutropin AQ",
+    "Nutropin Depot",
+    "Nydrazid",
+    "Omeprazole",
+    "Omnaris",
+    "Opana",
+    "Opticrom",
+    "OptiMARK",
+    "Optipranolol",
+    "Oracea",
+    "Oraqix",
+    "Orfadin",
+    "Orlaam",
+    "Orlistat",
+    "Orudis",
+    "Ovcon",
+    "Ovide",
+    "Oxandrolone",
+    "Oxaprozin",
+    "Oxistat",
+    "Oxsoralen-Ultra",
+    "Oxycodone HCl",
+    "Oxycodone Hydrochloride",
+    "Oxycontin",
+    "Oxymetholone",
+    "Oxymorphone",
+    "Oxytetracycline",
+    "Paclitaxel",
+    "Palifermin",
+    "Paliperidone",
+    "Palonosetron hydrochloride",
+    "Panhematin",
+    "Pantoprazole",
+    "Parafon Forte",
+    "Parnate",
+    "Paser",
+    "Pataday",
+    "Pazopanib",
+    "Pediapred",
+    "PEG 3350",
+    "Pegfilgrastim",
+    "Pemirolast Potassium",
+    "Penciclovir",
+    "Penicillamine",
+    "Penlac",
+    "Pentetate Zinc Trisodium",
+    "Pentobarbital",
+    "Pentoxifylline",
+    "Perflutren",
+    "Perindopril Erbumine",
+    "Permax",
+    "Persantine",
+    "Pfizerpen",
+    "Phenazopyridine",
+    "Phenelzine",
+    "Phenobarbital",
+    "Phenoxybenzamine",
+    "Phenylephrine HCl",
+    "Phenylephrine Hydrochloride",
+    "Phenytoin",
+    "Phosphate",
+    "Photofrin",
+    "Pilocarpine Hydrochloride",
+    "Pilopine HS",
+    "Pindolol",
+    "Pipracil",
+    "Piroxicam",
+    "Plaquenil",
+    "PlasmaLyte A",
+    "Plavix",
+    "Plenaxis",
+    "Pletal",
+    "Pneumovax",
+    "Podophyllin",
+    "Polidocanol",
+    "Polyethylene Glycol 3350",
+    "Polythiazide",
+    "Pramipexole",
+    "Pred-G",
+    "Prednicarbate",
+    "Prednisolone Acetate",
+    "Prednisone",
+    "Prefest",
+    "Pregnyl",
+    "Premarin",
+    "Prepidil",
+    "Prevpac",
+    "Priftin",
+    "Primacor",
+    "Primaquine",
+    "Primidone",
+    "Prinivil",
+    "Prinzide",
+    "Pristiq",
+    "Procainamide",
+    "Procalamine",
+    "Prochlorperazine Maleate",
+    "ProHance",
+    "Proleukin",
+    "Prolixin",
+    "Promethazine HCl",
+    "Promethazine Hydrochloride",
+    "Prometrium",
+    "Propecia",
+    "Proquin XR",
+    "Prostin VR Pediatric",
+    "Protein C Concentrate",
+    "Protopic",
+    "Protriptyline Hydrochloride",
+    "Proventil HFA",
+    "Provisc",
+    "Provocholine",
+    "Pulmicort Flexhaler",
+    "Pylera",
+    "Pyrazinamide",
+    "Pyridium",
+    "Pyridostigmine",
+    "Qualaquin",
+    "Quazepam",
+    "Quinidine Sulfate",
+    "Quixin",
+    "Rabies Vaccine",
+    "Raltegravir",
+    "Ranexa",
+    "Ranitidine Hcl",
+    "Rapamune",
+    "Rasagiline",
+    "Raxar",
+    "Rebetol",
+    "Remicade",
+    "Remifentanil",
+    "Renese",
+    "ReoPro",
+    "Rescriptor",
+    "Rescula",
+    "Revatio",
+    "Revex",
+    "Revia",
+    "Reyataz",
+    "Rezulin",
+    "Rhinocort Aqua",
+    "Rhogam Ultra-Filtered Plus",
+    "RiaSTAP",
+    "Rifamate",
+    "Riomet",
+    "Risperidone",
+    "Ritalin",
+    "Rituximab",
+    "Rivastigmine Tartrate",
+    "Robinul",
+    "Rosiglitazone Maleate",
+    "Rotarix",
+    "RotaTeq",
+    "Roxicet",
+    "Roxicodone",
+    "Ryzolt",
+    "Sabril",
+    "Sacrosidase",
+    "Samsca",
+    "Sanctura",
+    "Santyl",
+    "Saphris",
+    "Scopolamine",
+    "Seasonale",
+    "Selegiline Hydrochloride",
+    "Selsun",
+    "Septra",
+    "Serax",
+    "Sertraline Hcl",
+    "Serzone",
+    "Sevoflurane",
+    "Sibutramine Hydrochloride Monohydrate",
+    "Silenor",
+    "Simponi",
+    "Sirolimus",
+    "Sitagliptin Metformin HCL",
+    "Slow-K",
+    "Sodium Bicarbonate",
+    "Sodium ferric gluconate",
+    "Sodium Iodide I 131",
+    "Sodium Polystyrene Sulfonate",
+    "Sodium Sulfacetamide",
+    "Soma Compound",
+    "Somatrem",
+    "Somatropin",
+    "Sonata",
+    "Soriatane",
+    "Sotradecol",
+    "Spiriva",
+    "Sporanox",
+    "Sprix",
+    "Sprycel",
+    "Stalevo",
+    "Starlix",
+    "Stavudine",
+    "Streptokinase",
+    "Strontium-89",
+    "Suboxone",
+    "Succimer",
+    "Succinylcholine Chloride",
+    "Sucralfate",
+    "Sulfamylon",
+    "Sunitinib Malate",
+    "Sutent",
+    "Synthroid",
+    "Synvisc",
+    "Syprine",
+    "Tacrolimus",
+    "Talacen",
+    "Talwin Nx",
+    "Tamiflu",
+    "Tamoxifen Citrate",
+    "Tapazole",
+    "Targretin",
+    "Tasmar",
+    "Tegretol",
+    "Tekturna HCT",
+    "Telavancin",
+    "Telbivudine",
+    "Telmisartan",
+    "Temovate Scalp",
+    "Temozolomide",
+    "Temsirolimus",
+    "Teniposide",
+    "Terazol 3, Terazol 7",
+    "Tessalon",
+    "Testolactone",
+    "Testred",
+    "Teveten HCT",
+    "Theracys",
+    "Thiabendazole",
+    "Thiethylperazine",
+    "Thiopental Sodium",
+    "Thioridazine",
+    "Thiothixene Hcl",
+    "Thrombin",
+    "Thyrolar",
+    "Thyrotropin Alfa",
+    "Tiazac",
+    "Ticarcillin",
+    "Tinzaparin",
+    "Tirosint",
+    "Tizanidine",
+    "Tobrex",
+    "Tofranil-PM",
+    "Tolazamide",
+    "Tolmetin Sodium",
+    "Tonocard",
+    "Topicort",
+    "Topiramate",
+    "Topotecan Hydrochloride",
+    "Toradol",
+    "Torsemide",
+    "Toviaz",
+    "Tramadol Hcl",
+    "Tranxene",
+    "Trastuzumab",
+    "Trasylol",
+    "Tretinoin",
+    "Trexall",
+    "Tri-Sprintec",
+    "Triamcinolone Acetonide",
+    "Triazolam",
+    "Tribenzor",
+    "Trientine",
+    "Trihexyphenidyl",
+    "Trilipix",
+    "Trilisate",
+    "Trimethadione",
+    "Trimethoprim",
+    "Trimethoprim and Sulfamethoxazole",
+    "Trimetrexate Glucuronate",
+    "Trizivir",
+    "Trovafloxacin",
+    "Trovan",
+    "Trusopt",
+    "Trypan Blue",
+    "Tussionex",
+    "Tysabri",
+    "Tyvaso",
+    "Uloric",
+    "Ultiva",
+    "Ultram",
+    "Ultrase",
+    "Ultravate",
+    "Unasyn",
+    "Urex",
+    "Ursodiol",
+    "Vagistat-1",
+    "Valacyclovir Hydrochloride",
+    "Valganciclovir Hcl",
+    "Valium",
+    "Valproic Acid",
+    "Valsartan and Hydrochlorothiazide",
+    "Vancomycin Hydrochloride",
+    "Vaprisol",
+    "Vasocidin",
+    "Vasotec",
+    "Vasovist",
+    "Vectibix",
+    "Vectical",
+    "Velosulin",
+    "Veltin",
+    "Venlafaxine Hydrochloride",
+    "Veramyst",
+    "Vermox",
+    "Vesanoid",
+    "VESIcare",
+    "Vibramycin",
+    "Vicodin",
+    "Vicodin HP",
+    "Vicoprofen",
+    "Victoza",
+    "Vimovo",
+    "Vimpat",
+    "Vinblastine Sulfate",
+    "Viokase",
+    "Vioxx",
+    "Viread",
+    "VisionBlue",
+    "Vistide",
+    "Vitamin K1",
+    "Vivactil",
+    "Vivelle-Dot",
+    "Vusion",
+    "Vytorin",
+    "Winstrol",
+    "Xigris",
+    "Xolair",
+    "Yellow Fever Vaccine",
+    "Zaditor",
+    "Zalcitabine",
+    "Zanosar",
+    "Zelnorm",
+    "Zemaira",
+    "Zemplar",
+    "Zestoretic",
+    "Zestril",
+    "Ziconotide",
+    "Zingo",
+    "Zmax",
+    "Zocor",
+    "Zolinza",
+    "Zolmitriptan",
+    "Zonalon",
+    "Zoster Vaccine Live",
+    "Zosyn",
+    "Zyclara",
+    "Zyflo",
+    "Zylet",
+    "Zyloprim",
+    "Zymaxid"
+  ];
+
+  frequencyList: any[] = [];
+  addFrequency(event: any) {
+    const selectedValue = event.target.value;
+    this.frequencyList.push(selectedValue);
+  }
+  fList: any[] = [
+    "",
+    "1-0-1",
+    "1-0-0",
+    "0-1-0",
+    "0-0-1",
+    "1-1-0",
+    "0-1-1",
+    "1-1-1"
+  ]
+
+
+
+  durationList: any[] = [];
+  addduration(event: any) {
+    const selectedValue = event.target.value;
+    this.durationList.push(selectedValue);
+  }
+  dList: any[] = [
+    "",
+    "5 days",
+    "7 days",
+    "14 days",
+    "30 days",
+    "60 days",
+    "Running"
+
+  ]
+
+
+
+  investigationList: any[] = [];
+  addInvestigation(event: any) {
+    const selectedValue = event.target.value;
+    this.investigationList.push(selectedValue);
+  }
+
+  iList: any[] = [
+    "",
+    "Blood Test",
+    "Urine Test",
+    "X-Ray",
+    "ECG",
+    "MRI",
+    "CT-Scan",
+    "Sonography"
+  ]
+
+
+  diagnosisList: any[] = [];
+
+  addDiagnosis(event: any) {
+    const selectedValue = event.target.value;
+    this.diagnosisList.push(selectedValue);
+  }
+
+  diaList: any[] = [
+    "",
+    "Fever",
+    "Cold",
+    "Cough",
+    "Headache",
+    "Stomach Ache",
+    "Body Pain",
+    "Vomiting",
+    "Loose Motion",
+    "Constipation",
+    "Dizziness",
+    "Breathing Problem",
+    "Chest Pain",
+    "Back Pain",
+    "Joint Pain",
+    "Muscle Pain",
+    "Neck Pain",
+    "Eye Pain",
+    "Ear Pain",
+    "Throat Pain",
+    "Skin Rash",
+    "Itching",
+    "Burning",]
+
+  // prescriptionList: any[] = [];
+  // addPrescription() {
+  //   this.prescriptionList.push(this.prescriptionForm.value);
+  //   this.prescriptionForm.reset();
+  // }
+
+  // deletePrescription(index: any) {
+  //   this.prescriptionList.splice(index, 1);
+  // }
+
+  // savePrescription() {
+  //   this.prescriptionService.save(this.prescriptionList).subscribe((val: any) => {
+  //     this.prescriptionList = val;
+  //     this.prescriptionList = [];
+  //   });
+  // }
+
+  // ngOnInit() {
+  //   this.prescriptionForm = this.formBuilder.group({
+  //     medicine: ['', Validators.required],
+  //     frequency: ['', Validators.required],
+  //     duration: ['', Validators.required],
+  //     investigation: ['', Validators.required],
+  //     diagnosis: ['', Validators.required]
+  //   });
+
+  //   this.prescriptionService.getAll().subscribe((val: any) => {
+  //     this.prescriptionList = val;
+  //   });
+
+
+}

@@ -1,0 +1,139 @@
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 12px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  transition: border-color 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: rgb(242, 110, 38);
+  outline: none;
+}
+
+button.btn {
+  width: 100%;
+  padding: 12px;
+  background-color: rgb(242, 110, 38);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button.btn:hover {
+  background-color: rgb(214, 98, 34);
+}
+
+
+
+input[type="checkbox"] {
+  width: auto;
+  margin-right: 10px;
+}
+
+input[type="checkbox"]:checked {
+  background-color: rgb(242, 110, 38);
+}
+
+.form-group div {
+  margin-bottom: 8px;
+}
+
+label[for="enabled"],
+label[for="credentialsNonExpired"],
+label[for="accountNonExpired"],
+label[for="accountNonLocked"] {
+  font-size: 14px;
+  font-weight: 400;
+  color: #333;
+}
+
+button:disabled {
+  background-color: #ddd;
+  cursor: not-allowed;
+}
+
+
+/* Style the container around the select element */
+div {
+  margin-bottom: 20px;
+}
+
+label[for="roles"] {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  display: block;
+  margin-bottom: 8px;
+}
+
+/* Style the select element itself */
+select.form-control {
+  width: 100%;
+  padding: 12px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  transition: border-color 0.3s ease;
+  background-color: white;
+  height: auto;
+  min-height: 150px; /* Ensure enough height for multiple selections */
+  resize: vertical; /* Allows vertical resizing of the select element */
+}
+
+/* Focus styles */
+select.form-control:focus {
+  border-color: rgb(242, 110, 38);
+  outline: none;
+}
+
+/* Hover effect for the select element */
+select.form-control:hover {
+  border-color: rgb(214, 98, 34);
+}
+
+/* Option element styling */
+option {
+  padding: 8px;
+  background-color: white;
+  color: #333;
+}
+
+/* Highlight option when selected */
+option:checked {
+  background-color: rgb(242, 110, 38);
+  color: white;
+}
+
+/* Adjust the width of select for responsive layout */
+@media (max-width: 768px) {
+  select.form-control {
+    width: 100%;
+  }
+}

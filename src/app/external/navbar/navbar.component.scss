@@ -1,0 +1,129 @@
+.card_M {
+    width: 130px;
+    height: 130px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    padding: 20px;
+    cursor: pointer;
+}
+
+.card_M img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 15px;
+}
+
+.card_M p {
+    font-size: 14px;
+    color: #333;
+    margin: 0;
+    
+}
+.card_M p:hover {
+    color: #ffffff;
+    
+}
+.card_M:hover {
+    transform: translateY(-5px);
+    background-color:rgba(242, 109, 38, 0.815);
+    color: white;
+}
+
+
+.card_M_international {
+    width: 150px;
+    height: 130px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.card_M_international img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 15px;
+}
+
+.card_M_international p {
+    font-size: 15px;
+    color: #333;
+    margin: 0;
+    
+}
+.card_M_international:hover {
+    transform: translateY(-5px);
+    background-color:rgba(242, 109, 38, 0.21);
+    color: white;
+}
+
+
+.text1:hover {
+    font-weight: bolder;
+
+    color: rgb(242, 110, 38);
+}
+.dr_image{
+    width: 70%;
+    height: 350px;
+    gap: 20px;
+}
+
+.dr_image img{
+    width: 70%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px ;
+    justify-content: center;
+    transition: all ease-in-out 0.5s;
+}
+.dr_image img:hover{
+    width: 100%;
+}
+
+
+.card_M1 {
+    width: 115px;
+    height: 115px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    padding: 5px;
+    cursor: pointer;
+    margin: 5px 5px ;
+}
+.card_M1 a {
+    font-size: 14px;
+    color: #333;
+    margin: 0;
+    text-decoration: solid;
+}
+
+.card_M1:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+.abc:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}

@@ -1,0 +1,33 @@
+<div class="container mt-4">
+    <h4>Sales Summary</h4>
+    <div class="card p-3">
+        <form class="row g-3">
+            <!-- From Date -->
+            <div>
+                <label for="fromDate">From Date:</label>
+                <input type="datetime-local" id="fromDate" [(ngModel)]="fromDate" name="fromDate">
+            </div>
+            
+            <div>
+                <label for="toDate">To Date:</label>
+                <input type="datetime-local" id="toDate" [(ngModel)]="toDate" name="toDate">
+            </div>
+
+
+            <!-- Clear Button -->
+            <div class="col-md-3 d-flex align-items-end">
+                <button type="button" class="btn btn-secondary" (click)="clearForm()">Clear</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Report Format Selection and View Button -->
+    <div class="d-flex justify-content-end mt-3">
+        <select class="form-select w-auto me-2" [(ngModel)]="selectedFormat">
+            <option *ngFor="let format of exportFormats" [value]="format">{{ format }}</option>
+        </select>
+        <a [href]="'http://localhost:9090/download?format=' + format + '&fromDate=' + fromDate + '&toDate=' + toDate" target="_blank">
+            <button type="button" class="btn-submit">Print</button>
+        </a>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+<div class="d-flex">
+    <!-- Sidebar -->
+    <div class="sidebar" style="background-color: black;">
+        <br><h4>Doctor Dashboard</h4>
+        <br>
+        <a routerLink="doctor_dashboard"><i class="fas fa-home"></i> &nbsp; Dashboard</a>
+        <a routerLink="appointment"><i class="fas fa-users"></i> &nbsp; Patients </a>
+        <!-- <a routerLink="dlist">Doctor</a> -->
+        <!-- <a routerLink="pres_create/:id">Nurse</a> -->
+        <a routerLink="prescription_pad"> <i class="fa-solid fa-prescription"></i> &nbsp; Prescription Create</a>
+        <a routerLink="prescribed"><i class="fa-solid fa-list"></i> &nbsp; Prescribed</a>
+        <a routerLink="note"><i class="fa-solid fa-clipboard"></i> &nbsp;  Somthing To Note</a>
+        <!-- <button (click)="toggleTheme()">🌙 Toggle Dark Mode</button> -->
+
+
+        <a><i class="fas fa-cog"></i> &nbsp; Settings</a>
+        <a (click)="logout()" routerLink="../login"><i class="fas fa-sign-out-alt"></i> &nbsp; Logout</a>
+        
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content w-100">
+        <!-- Header -->
+        <div class="header">
+            <h1>Welcome, {{userName}}</h1>
+            <div class="d-flex align-items-center">
+                <span class="me-3">{{date}} | {{time}}</span>
+            </div>
+        </div>
+
+        <!-- Placeholder for Router Content -->
+        <div>
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
+
+

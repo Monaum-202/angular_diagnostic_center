@@ -1,0 +1,46 @@
+<div class="container">
+    <header>
+      Doctor's To-Do List
+    </header>
+  
+    <!-- Input area to add tasks -->
+    <div class="task-input">
+      <input type="text" id="taskInput" placeholder="Add a new task...">
+      <button onclick="addTask()">Add Task</button>
+    </div>
+  
+  </div>
+
+<div class="container">
+    <h1> To-Do List</h1>
+
+    <!-- Patient-Centered Tasks -->
+    <div class="category">
+      <h3>Patient-Centered Tasks</h3>
+      <ul id="patientTasks">
+        <li>Follow up with Patient A about lab results <button class="btn-remove" onclick="removeTask(this)">Done</button></li>
+        <li>Review test reports for Patient B <button class="btn-remove" onclick="removeTask(this)">Done</button></li>
+        <li>Call Patient C for prescription updates <button class="btn-remove" onclick="removeTask(this)">Done</button></li>
+      </ul>
+    </div>
+
+    <!-- Administrative Tasks -->
+    <div class="category">
+      <h3>Administrative Tasks</h3>
+      <ul id="adminTasks">
+        <li>Update patient records in the system <button class="btn-remove" onclick="removeTask(this)">Done</button></li>
+        <li>Respond to pending emails <button class="btn-remove" onclick="removeTask(this)">Done</button></li>
+        <li>Prepare monthly report for the clinic <button class="btn-remove" onclick="removeTask(this)">Done</button></li>
+      </ul>
+    </div>
+
+    <!-- Self-Care Tasks -->
+    <div class="category">
+      <h3>Self-Care Tasks</h3>
+      <ul id="selfCareTasks">
+        <li>Attend yoga or meditation class <button class="btn-remove" onclick="removeTask(this)">Done</button></li>
+        <li>Schedule annual health check-up for self <button class="btn-remove" onclick="removeTask(this)">Done</button></li>
+        <li>Plan a weekend getaway to recharge <button class="btn-remove" onclick="removeTask(this)">Done</button></li>
+      </ul>
+    </div>
+  </div>

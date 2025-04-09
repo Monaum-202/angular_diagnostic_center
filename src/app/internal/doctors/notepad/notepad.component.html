@@ -1,0 +1,28 @@
+<header class="header">
+  <h1>Simple Notepad</h1>
+</header>
+
+<div class="notepad-container">
+  <textarea
+    id="notepad"
+    placeholder="Type your notes here..."
+    [(ngModel)]="noteContent"
+    class="notepad-textarea"
+  ></textarea>
+  <div class="buttons">
+    <button class="btn save-btn" (click)="saveNote()">Save</button>
+    <button class="btn clear-btn" (click)="clearNote()">Clear</button>
+  </div>
+</div>
+
+<div class="notes-container">
+  <h3>Saved Notes</h3>
+  <ol class="notes-list">
+    <li *ngFor="let v of diagnosisList; let index = index" class="note-item">
+      <div class="note-content">
+        <p>{{ v.note }}</p>
+        <span class="note-timestamp">{{ v.createdAt | date: 'short' }}</span>
+      </div>
+    </li>
+  </ol>
+</div>

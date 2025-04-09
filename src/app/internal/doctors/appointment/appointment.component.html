@@ -1,0 +1,42 @@
+<br>
+<table class="table table-striped table-bordered">
+    <thead class="table-dark">
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Patient Name</th>
+            <th scope="col">Phone Number</th>
+            <th scope="col">Email</th>
+            <th scope="col">Address</th>
+            <th scope="col">Doctor Name</th>
+            <th scope="col">Appointment Date</th>
+            <!-- <th scope="col">Appointment Time</th> -->
+            <th scope="col">Message</th>
+            <th scope="col" style="text-align: center;">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let appointment of patientList">
+            <td>{{ appointment.id }}</td>
+            <td>{{ appointment.patientName }}</td>
+            <td>{{ appointment.contactNumber }}</td>
+            <td>{{ appointment.email }}</td>
+            <td>{{ appointment.address }}</td>
+            <td>{{ appointment.doctorName }}</td> 
+             <td>{{ appointment.appointmentDate }}</td> 
+            <!-- <td>{{ appointment.appointmentTime }}</td> -->
+            <td>{{ appointment.message }}</td>
+            <td class="text-center">
+                <a [routerLink]="['/doctor/prescription_pad']" aria-label="Edit Appointment">
+                    <button class="btn btn-dark btn-sm">Prescribe</button>
+                </a>
+                <!-- <button 
+                    class="btn btn-danger btn-sm ms-2" 
+                    (click)="deletePatient(appointment.id)" 
+                    aria-label="Delete Appointment">
+                    Delete
+                </button> -->
+            </td>
+        </tr>
+    </tbody>
+</table>
+

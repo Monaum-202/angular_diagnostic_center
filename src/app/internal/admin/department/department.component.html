@@ -1,0 +1,65 @@
+<div class="container">
+    <h2 class="text-center">Department Management</h2>
+  
+    <!-- Form for Add/Update -->
+    <form (submit)="saveDepartment()">
+      <div class="row">
+        <div class="col-md-4">
+          <input [(ngModel)]="department.name" name="name" class="form-control" placeholder="Department Name" required>
+        </div>
+        <div class="col-md-4">
+          <input [(ngModel)]="department.description" name="description" class="form-control" placeholder="Description" required>
+        </div>
+        <div class="col-md-4">
+          <button type="submit" class="btn btn-primary">{{ department.id ? 'Update' : 'Add' }} Department</button>
+          <button type="button" class="btn btn-secondary ms-2" (click)="clearForm()">Clear</button>
+        </div>
+      </div>
+    </form>
+  
+    <!-- Search -->
+    <div class="row mt-3">
+        <div class="col-md-4">
+          <input [(ngModel)]="searchQuery.name" class="form-control" placeholder="Search by Name">
+        </div>
+        <div class="col-md-4">
+          <input [(ngModel)]="searchQuery.description" class="form-control" placeholder="Search by Description">
+        </div>
+        <div class="col-md-4">
+          <button class="btn btn-info" (click)="searchDepartments()">Search</button>
+        </div>
+      </div>
+      
+
+      
+  
+    <!-- Table to list departments -->
+    <table class="table table-striped mt-4">
+      <thead class="table-dark">
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let dept of departments">
+          <td>{{ dept.id }}</td>
+          <td>{{ dept.name }}</td>
+          <td>{{ dept.description }}</td>
+          <td>
+            <button class="btn btn-warning btn-sm" (click)="editDepartment(dept)">Edit</button>
+            <button class="btn btn-danger btn-sm ms-2" (click)="deleteDepartment(dept.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+          <!-- Pagination Controls -->
+          <div *ngIf="totalPages > 1" class="pagination mt-3">
+            <button class="btn btn-secondary" (click)="changePage(page - 1)" [disabled]="page === 0">Previous</button>
+            <span>Page {{ page + 1 }} of {{ totalPages }}</span>
+            <button class="btn btn-secondary" (click)="changePage(page + 1)" [disabled]="page === totalPages - 1">Next</button>
+          </div>
+  </div>
+  
