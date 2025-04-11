@@ -10,7 +10,7 @@ import { LoginService } from 'src/app/service/login/login.service';
   styleUrls: ['./signup.component.scss']
 })
 export class SignupComponent {
-  apiUrl = 'https://b5a5-103-4-117-150.ngrok-free.app/api/auth/signup'; // Updated API Endpoint
+  apiUrl = 'http://localhost:9090/api/auth/signup'; // Updated API Endpoint
 
   user = {
     username: '',

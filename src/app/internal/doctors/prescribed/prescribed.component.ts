@@ -37,7 +37,7 @@ export class PrescribedComponent implements OnInit {
   }
 
   fetchPrescriptions(page: number = 0, size: number = 10, sort: string = 'createdAt,desc'): void {
-    const url = `https://b5a5-103-4-117-150.ngrok-free.app/api/prescriptions?page=${page}&size=${size}&sort=${sort}`;
+    const url = `http://localhost:9090/api/prescriptions?page=${page}&size=${size}&sort=${sort}`;
 
     this.http.get<PaginatedResponse<PrescriptionDTO>>(url).subscribe({
       next: (data) => {

@@ -1,1 +1,1 @@
-var server ="https://b5a5-103-4-117-150.ngrok-free.app/";
+var server ="http://localhost:9090/";

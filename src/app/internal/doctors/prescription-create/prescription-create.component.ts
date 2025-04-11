@@ -42,7 +42,7 @@ export class PrescriptionCreateComponent {
   }
 
   fetchTests() {
-    this.http.get<any[]>('https://b5a5-103-4-117-150.ngrok-free.app/api/diagnostic').subscribe(
+    this.http.get<any[]>('http://localhost:9090/api/diagnostic').subscribe(
       (data) => {
         this.tests = data || []; // Ensure tests is initialized
       },
@@ -110,7 +110,7 @@ export class PrescriptionCreateComponent {
 
 
   fetchDoctors() {
-    this.http.get<any[]>('https://b5a5-103-4-117-150.ngrok-free.app/api/doctor').subscribe(
+    this.http.get<any[]>('http://localhost:9090/api/doctor').subscribe(
       (data) => {
         this.doctors = data || []; // Ensure doctors list is initialized
       },
@@ -120,7 +120,7 @@ export class PrescriptionCreateComponent {
       }
     );
   }
-  
+
   // Filter doctors for autocomplete suggestions
   filterDoctors() {
     const input = this.doctorNameControl.value?.trim().toLowerCase() || '';
@@ -132,13 +132,13 @@ export class PrescriptionCreateComponent {
       );
     }
   }
-  
+
   // Select a doctor and set its name in the input box
   selectDoctor(doctor: any) {
     this.doctorNameControl.setValue(doctor.name); // Set selected doctor name in input
     this.filteredDoctors = []; // Clear suggestions
   }
-  
+
 
 
 
@@ -158,7 +158,7 @@ calculateTotal() {
 calculateDiscount() {
   let discountFromPercentage = (this.totalAmount * this.discountPercentage) / 100;
   let totalDiscount = discountFromPercentage + this.discountCash;
-  
+
   // Ensure discount does not exceed total amount
   if (totalDiscount > this.totalAmount) {
     totalDiscount = this.totalAmount;

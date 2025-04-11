@@ -10,13 +10,17 @@
         <!-- <a routerLink="pres_create/:id">Nurse</a> -->
         <a routerLink="prescription">Report Create</a>
         <a routerLink="prescription">Patient History</a>
+        <a routerLink="note"><i class="fas fa-cog"></i> &nbsp; Settings</a>
+        <a (click)="logout()" routerLink="../login"><i class="fas fa-sign-out-alt"></i> &nbsp; Logout</a>
+        <!-- <a routerLink="lab_entry"><i class="fas fa-hospital-user"></i> &nbsp; Lab Entry</a> -->
+                
     </div>
 
     <!-- Main Content -->
     <div class="main-content w-100">
         <!-- Header -->
         <div class="header">
-            <h5>Welcome, User</h5>
+            <h1>Welcome, {{userName}}</h1>
             <div class="d-flex align-items-center">
                 <span class="me-3">{{date}} | {{time}}</span>
             </div>

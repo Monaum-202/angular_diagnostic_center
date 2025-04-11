@@ -10,9 +10,9 @@ export class LoginService {
 
 
   // private apiURL = "http://localhost:3000/signup"
-  private apiURL = "https://b5a5-103-4-117-150.ngrok-free.app/api/signup"
+  private apiURL = "http://localhost:9090/api/signup"
 
-  
+
 
   addData(signup: any) {
     return this.httpClient.post(this.apiURL, signup);

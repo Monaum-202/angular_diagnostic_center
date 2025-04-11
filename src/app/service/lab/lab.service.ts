@@ -10,9 +10,9 @@ export class LabService {
 
 
   // private apiURL = "http://localhost:3000/lab_customer"
-  private apiURL = "https://b5a5-103-4-117-150.ngrok-free.app/api/lab_customer"
+  private apiURL = "http://localhost:9090/api/lab_customer"
 
-  
+
 
   addData(customer: any) {
     return this.httpClient.post(this.apiURL, customer);

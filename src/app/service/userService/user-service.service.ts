@@ -10,7 +10,7 @@ export class UserServiceService {
 
   // private apiUrl = "http://localhost:9090/api/users";
   // private apiUrl = "https://muskrat-wanted-rat.ngrok-free.app/api/users";
-  private apiUrl = "https://b5a5-103-4-117-150.ngrok-free.app/api/users";
+  private apiUrl = "http://localhost:9090/api/users";
 
   addData(userData: any) {
     return this.httpClient.post(this.apiUrl, userData)

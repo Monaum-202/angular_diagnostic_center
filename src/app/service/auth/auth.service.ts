@@ -3,8 +3,8 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 
 
-// const AUTH_API = 'http://localhost:9090/api/auth/';
-const AUTH_API = 'https://ideally-precious-fish.ngrok-free.app/api/auth/';
+const AUTH_API = 'http://localhost:9090/api/auth/';
+// const AUTH_API = 'https://ideally-precious-fish.ngrok-free.app/api/auth/';
 
 
 const httpOptions = {
@@ -58,7 +58,7 @@ export class AuthService {
   setUserName(userName : String){
     this.userName = userName;
   }
-  getUserName(){      
+  getUserName(){
     return this.userName;
-  }     
+  }
 }

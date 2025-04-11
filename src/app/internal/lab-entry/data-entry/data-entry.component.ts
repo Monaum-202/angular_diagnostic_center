@@ -76,7 +76,7 @@ export class DataEntryComponent implements OnInit {
   }
 
   fetchTests() {
-    this.http.get<DiagnosticTest[]>('https://b5a5-103-4-117-150.ngrok-free.app/api/diagnostic').subscribe(
+    this.http.get<DiagnosticTest[]>('http://localhost:9090/api/diagnostic').subscribe(
       (data) => {
         this.tests = data || [];
       },
@@ -88,7 +88,7 @@ export class DataEntryComponent implements OnInit {
   }
 
   fetchDoctors() {
-    this.http.get<any[]>('https://b5a5-103-4-117-150.ngrok-free.app/api/doctor').subscribe(
+    this.http.get<any[]>('http://localhost:9090/api/doctor').subscribe(
       (data) => {
         this.doctors = data || [];
       },
@@ -142,10 +142,10 @@ export class DataEntryComponent implements OnInit {
 
   calculateAmounts() {
     this.totalAmount = this.diagonesticTests.controls.reduce((sum, control) => sum + control.value.price, 0);
-    
+
     const discountFromPercent = (this.totalAmount * this.reactform.value.discount) / 100;
     const totalDiscount = Math.min(discountFromPercent + this.reactform.value.discount1, this.totalAmount);
-    
+
     this.payableAmount = this.totalAmount - totalDiscount;
     this.dueAmount = Math.max(this.payableAmount - this.reactform.value.paidAmount, 0);
 
@@ -159,16 +159,16 @@ export class DataEntryComponent implements OnInit {
   submitForm() {
     if (this.reactform.valid) {
       console.log('Form submitted:', this.reactform.value);
-      
-      this.http.post<any>('https://b5a5-103-4-117-150.ngrok-free.app/api/MoneyReceipt', this.reactform.value)
+
+      this.http.post<any>('http://localhost:9090/api/MoneyReceipt', this.reactform.value)
         .subscribe(response => {
           if (response && response.id) {
             console.log('Form submitted successfully', response);
             // alert('Form submitted successfully!');
-            
+
             // Download receipt first before resetting the form
             this.downloadReceipt(response.id);
-            
+
             // Reset form after a short delay to ensure the download starts
             setTimeout(() => {
               this.reactform.reset();
@@ -185,14 +185,14 @@ export class DataEntryComponent implements OnInit {
       alert('Please fill out all required fields correctly.');
     }
   }
-  
+
   downloadReceipt(id: number) {
     const format = 'pdf';
-    this.http.get(`https://b5a5-103-4-117-150.ngrok-free.app/receipt/download?format=${format}&id=${id}`, { responseType: 'blob' })
+    this.http.get(`http://localhost:9090/receipt/download?format=${format}&id=${id}`, { responseType: 'blob' })
       .subscribe(response => {
         const blob = new Blob([response], { type: 'application/pdf' });
         const url = window.URL.createObjectURL(blob);
-  
+
         // Open PDF in an iframe and trigger print
         const printWindow = window.open('', '_blank');
         if (printWindow) {
@@ -203,7 +203,7 @@ export class DataEntryComponent implements OnInit {
         } else {
           alert('Popup blocked! Please allow popups for this site.');
         }
-  
+
         // Optional: Revoke the object URL after some time
         setTimeout(() => window.URL.revokeObjectURL(url), 5000);
       }, error => {
@@ -211,13 +211,13 @@ export class DataEntryComponent implements OnInit {
         alert('Failed to generate receipt.');
       });
   }
-  
-  
+
+
 
 
   userlist:any[]= [];
   userName: string = '';
-  
+
   format: string = 'pdf';  // Default format (can be changed by user)
   id: any = '';   // Start date in ISO 8601 format
   toDate: string = ''; // End date (ISO 8601 format)

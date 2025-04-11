@@ -6,16 +6,16 @@ import { Injectable } from '@angular/core';
 })
 export class AppointmentService {
   constructor(private httpClient: HttpClient) { }
-  
-  
+
+
   // private apiUrl = "http://localhost:9090/api/doctorAppointments"
   private apiUrl = "https://ideally-precious-fish.ngrok-free.app/api/doctorAppointments"
 
-  // https://b5a5-103-4-117-150.ngrok-free.app/
-  
+  // http://localhost:9090/
+
   addData(user: any) {
     return this.httpClient.post(this.apiUrl, user)
-  } 
+  }
 
   // getAll() {
   //   return this.httpClient.get(this.apiUrl)
@@ -35,7 +35,7 @@ export class AppointmentService {
 
   updateData(user: any){
     console.log(user);
-    
+
     return this.httpClient.put(this.apiUrl+ "/"+ user.id, user)
   }
 }

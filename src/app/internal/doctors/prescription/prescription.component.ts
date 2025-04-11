@@ -32,7 +32,7 @@ export class PrescriptionComponent implements OnInit {
   }
 
   fetchMedicines() {
-    this.http.get<any[]>('https://b5a5-103-4-117-150.ngrok-free.app/api/medicines').subscribe(data => {
+    this.http.get<any[]>('http://localhost:9090/api/medicines').subscribe(data => {
       this.medicines = data;
     });
   }
@@ -51,14 +51,14 @@ export class PrescriptionComponent implements OnInit {
 
   submitPrescription() {
     console.log(this.prescriptionForm.value);
-    this.http.post('https://b5a5-103-4-117-150.ngrok-free.app/api/prescriptions', this.prescriptionForm.value)
+    this.http.post('http://localhost:9090/api/prescriptions', this.prescriptionForm.value)
       .subscribe(response => console.log('Prescription saved', response));
   }
 
     id!: any;
     prescriptionList!: any;
-  
-  
+
+
     prescriptionsForm: FormGroup = new FormGroup({
       patientName: new FormControl(),
       age: new FormControl(),
@@ -70,11 +70,11 @@ export class PrescriptionComponent implements OnInit {
       diagnosis: new FormControl(),
       message: new FormControl(),
     })
-  
+
     onSubmit() {
       console.log(this.prescriptionsForm.value);
-      
-      this.http.post('https://b5a5-103-4-117-150.ngrok-free.app/api/prescriptions', this.prescriptionForm.value)
+
+      this.http.post('http://localhost:9090/api/prescriptions', this.prescriptionForm.value)
       .subscribe(response => console.log('Prescription saved', response));
     }
 }
